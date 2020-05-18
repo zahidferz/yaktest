@@ -3,6 +3,18 @@
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 # Note that the trigger is ignored and overriden by Azure Pipelines options
+resources:
+  repositories:
+  - repository: yaktest # The name used to reference this repository in the checkout step
+    type: github
+    endpoint: za
+    name: zahidferz/yaktest
+  
+  - repository: gx-yak-tests # The name used to reference this repository in the checkout step
+    type: github
+    endpoint: gx-github
+    name: gestionix/gx-yak-tests 
+
 name: $(SourceBranchName)
 pool:
   vmImage: 'Ubuntu-16.04'
@@ -43,6 +55,13 @@ jobs:
           path: $(npm_config_cache)
         displayName: Cache npm
 
+      - task: Cache@2
+        inputs:
+          key: cypress | $(Agent.OS) | package-lock.json
+          path: /home/vsts/.cache/Cypress
+          restoreKeys: cypress | $(Agent.OS) | package-lock.json
+        displayName: Cache Cypress binary
+
       - script: |
           npm ci
         displayName: 'Install dependencies'
@@ -59,17 +78,22 @@ jobs:
           VUE_APP_AUTH_URL_APP_SECRET: $(VUE_APP_AUTH_URL_APP_SECRET)
           VUE_APP_INTERCOM: $(VUE_APP_INTERCOM)
 
-      # - script: |
-      #     yarn test:e2e
-      #   displayName: 'Run tests e2e'
-      #   env:
-      #     VUE_APP_ACC_PROV_URL_CLIENT_ID: $(VUE_APP_ACC_PROV_URL_CLIENT_ID)
-      #     VUE_APP_ACC_PROV_URL_CLIENT_SECRET: $(VUE_APP_ACC_PROV_URL_CLIENT_SECRET)
-      #     VUE_APP_AUTH0_CLIENT_ID: $(VUE_APP_AUTH0_CLIENT_ID)
-      #     VUE_APP_AUTH_URL_APP_ID: $(VUE_APP_AUTH_URL_APP_ID)
-      #     VUE_APP_AUTH_URL_CLIENT_ID: $(VUE_APP_AUTH_URL_CLIENT_ID)
-      #     VUE_APP_AUTH_URL_APP_SECRET: $(VUE_APP_AUTH_URL_APP_SECRET)
-      #   timeoutInMinutes: 15
+      - script: |
+          npm run start:ci
+          npx cypress run  -s "$(System.DefaultWorkingDirectory)/gx-yak-tests/cypress/integration/Desktop/*"
+        #  npx cypress run --record --parallel --ci-build-id $(buildVersion) --group "Desktop" -s "cypress/integration/Desktop/*"
+        #  npx cypress run --record --parallel --ci-build-id $(buildVersion) --group "Mobile" -s "cypress/integration/Mobile/*"
+
+        displayName: 'Run tests e2e'
+        env:
+          VUE_APP_ACC_PROV_URL_CLIENT_ID: $(VUE_APP_ACC_PROV_URL_CLIENT_ID)
+          VUE_APP_ACC_PROV_URL_CLIENT_SECRET: $(VUE_APP_ACC_PROV_URL_CLIENT_SECRET)
+          VUE_APP_AUTH0_CLIENT_ID: $(VUE_APP_AUTH0_CLIENT_ID)
+          VUE_APP_AUTH_URL_APP_ID: $(VUE_APP_AUTH_URL_APP_ID)
+          VUE_APP_AUTH_URL_CLIENT_ID: $(VUE_APP_AUTH_URL_CLIENT_ID)
+          VUE_APP_AUTH_URL_APP_SECRET: $(VUE_APP_AUTH_URL_APP_SECRET)
+          CYPRESS_HOST: "http://dev.local:8080/"
+        timeoutInMinutes: 15
 
       #- task: PublishPipelineArtifact@0
       #  displayName: 'Publish Screenshots (Cypress)'

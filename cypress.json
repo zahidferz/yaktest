@@ -1,6 +1,12 @@
 {
   "pluginsFile": "tests/e2e/plugins/index.js",
-  "chromeWebSecurity": false,
-  "projectId": "5r3sc9",
-  "defaultCommandTimeout": 15000
+   "testFiles": "**/*.{feature,features}",
+   "chromeWebSecurity": false,
+   "defaultCommandTimeout": 18000,
+   "reporter": "junit",
+   "reporterOptions": {
+     "mochaFile": "results/Test_Results.xml",
+     "toConsole": true
+    },
+    "projectId": "y5ds2g"
 }

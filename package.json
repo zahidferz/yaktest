@@ -27,7 +27,8 @@
     "test:unit": "vue-cli-service test:unit",
     "test:unit:ci": "npm run test:unit --coverage --ci",
     "test:unit:file": "npm run test:unit --bail --findRelatedTests",
-    "test:unit:watch": "npm run test:unit --watch --notify --notifyMode change"
+    "test:unit:watch": "npm run test:unit --watch --notify --notifyMode change",
+    "start:ci": "vue-cli-service serve"
   },
   "dependencies": {
     "@bugsnag/js": "^6.3.2",
@@ -85,7 +86,6 @@
     "@storybook/addon-viewport": "5.0.5",
     "@storybook/vue": "^5.0.5",
     "@vue/cli-plugin-babel": "^4.3.0",
-    "@vue/cli-plugin-e2e-cypress": "^4.3.0",
     "@vue/cli-plugin-eslint": "^4.3.0",
     "@vue/cli-plugin-pwa": "^4.3.0",
     "@vue/cli-plugin-router": "^4.3.0",
@@ -137,8 +137,7 @@
     "pre-commit": "cross-env PRE_COMMIT=true lint-staged"
   },
   "resolutions": {
-    "vue-cropperjs/cropperjs": "^1.5.6",
-    "@vue/cli-plugin-e2e-cypress/cypress": "^4.3.0"
+    "vue-cropperjs/cropperjs": "^1.5.6"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true,
