@@ -92,7 +92,7 @@ jobs:
           VUE_APP_AUTH_URL_APP_ID: $(VUE_APP_AUTH_URL_APP_ID)
           VUE_APP_AUTH_URL_CLIENT_ID: $(VUE_APP_AUTH_URL_CLIENT_ID)
           VUE_APP_AUTH_URL_APP_SECRET: $(VUE_APP_AUTH_URL_APP_SECRET)
-          CYPRESS_HOST: "http://dev.local:8080/"
+          CYPRESS_HOST: "$(CYPRESS_HOST)"
         timeoutInMinutes: 15
 
       #- task: PublishPipelineArtifact@0
