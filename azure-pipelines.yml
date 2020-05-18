@@ -79,7 +79,7 @@ jobs:
           VUE_APP_INTERCOM: $(VUE_APP_INTERCOM)
 
       - script: |
-          npm run start:ci
+          npm run start:ci &
           npx cypress run  -s "$(System.DefaultWorkingDirectory)/gx-yak-tests/cypress/integration/Desktop/*"
         #  npx cypress run --record --parallel --ci-build-id $(buildVersion) --group "Desktop" -s "cypress/integration/Desktop/*"
         #  npx cypress run --record --parallel --ci-build-id $(buildVersion) --group "Mobile" -s "cypress/integration/Mobile/*"
