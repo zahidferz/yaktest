@@ -1,0 +1,14 @@
+<svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <title>background</title>
+  <rect x="-1" y="-1" width="2.999979" height="2.999979" id="canvas_background" fill="none"/>
+ </g>
+
+ <g>
+  <title>Layer 1</title>
+  <g id="Grupo_40160" fill="#707070" stroke="#FFFFFF" stroke-width="0">
+   <rect x="0.0625" y="-0.0625" width="16" height="16" id="Rectángulo_5885" stroke="#FFFFFF" stroke-width="0" fill="none"/>
+   <path d="m9.346497,5.275498l0,-1.129c-0.04,-0.329 0.195,-0.628 0.524,-0.667c0.033,-0.004 0.067,-0.006 0.1,-0.004l1.576,0l0,-2.412l-2.171,0c-1.504,-0.127 -2.825,0.989 -2.952,2.493c-0.013,0.149 -0.013,0.299 -0.001,0.448l0,1.271l-1.4,0l0,2.812l1.412,0l0,7.024l2.812,0l0,-7.024l2.083,0l0.094,-1.106l0.165,-1.706l-2.242,0z" id="Trazado_42789" stroke="#FFFFFF" stroke-width="0" fill="#ffffff" fill-rule="evenodd"/>
+  </g>
+ </g>
+</svg>

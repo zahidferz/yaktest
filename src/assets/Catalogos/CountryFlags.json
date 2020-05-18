@@ -1,0 +1,1746 @@
+[
+  {
+    "country": "México",
+    "code": "+52",
+    "startCode": "1F1F2",
+    "endCode": "1F1FD",
+    "emoji": "🇲🇽",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f2-1f1fd.svg"
+  },
+  {
+    "country": "United States",
+    "code": "+1",
+    "startCode": "1F1FA",
+    "endCode": "1F1F8",
+    "emoji": "🇺🇸",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1fa-1f1f8.svg"
+  },
+  {
+    "country": "Afghanistan",
+    "code": "+93",
+    "startCode": "1F1E6",
+    "endCode": "1F1EB",
+    "emoji": "🇦🇫",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e6-1f1eb.svg"
+  },
+  {
+    "country": "Albania",
+    "code": "+355",
+    "startCode": "1F1E6",
+    "endCode": "1F1F1",
+    "emoji": "🇦🇱",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e6-1f1f1.svg"
+  },
+  {
+    "country": "Algeria",
+    "code": "+213",
+    "startCode": "1F1E9",
+    "endCode": "1F1FF",
+    "emoji": "🇩🇿",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e9-1f1ff.svg"
+  },
+  {
+    "country": "American Samoa",
+    "code": "+684",
+    "startCode": "1F1E6",
+    "endCode": "1F1F8",
+    "emoji": "🇦🇸",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e6-1f1f8.svg"
+  },
+  {
+    "country": "Andorra",
+    "code": "+376",
+    "startCode": "1F1E6",
+    "endCode": "1F1E9",
+    "emoji": "🇦🇩",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e6-1f1e9.svg"
+  },
+  {
+    "country": "Angola",
+    "code": "+244",
+    "startCode": "1F1E6",
+    "endCode": "1F1F4",
+    "emoji": "🇦🇴",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e6-1f1f4.svg"
+  },
+  {
+    "country": "Anguilla",
+    "code": "+264",
+    "startCode": "1F1E6",
+    "endCode": "1F1EE",
+    "emoji": "🇦🇮",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e6-1f1ee.svg"
+  },
+  {
+    "country": "Antarctica",
+    "code": "+672",
+    "startCode": "1F1E6",
+    "endCode": "1F1F6",
+    "emoji": "🇦🇶",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e6-1f1f6.svg"
+  },
+  {
+    "country": "Antigua and Barbuda",
+    "code": "+268",
+    "startCode": "1F1E6",
+    "endCode": "1F1EC",
+    "emoji": "🇦🇬",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e6-1f1ec.svg"
+  },
+  {
+    "country": "Argentina",
+    "code": "+54",
+    "startCode": "1F1E6",
+    "endCode": "1F1F7",
+    "emoji": "🇦🇷",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e6-1f1f7.svg"
+  },
+  {
+    "country": "Armenia",
+    "code": "+374",
+    "startCode": "1F1E6",
+    "endCode": "1F1F2",
+    "emoji": "🇦🇲",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e6-1f1f2.svg"
+  },
+  {
+    "country": "Aruba",
+    "code": "+297",
+    "startCode": "1F1E6",
+    "endCode": "1F1FC",
+    "emoji": "🇦🇼",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e6-1f1fc.svg"
+  },
+  {
+    "country": "Australia",
+    "code": "+61",
+    "startCode": "1F1E6",
+    "endCode": "1F1FA",
+    "emoji": "🇦🇺",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e6-1f1fa.svg"
+  },
+  {
+    "country": "Austria",
+    "code": "+43",
+    "startCode": "1F1E6",
+    "endCode": "1F1F9",
+    "emoji": "🇦🇹",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e6-1f1f9.svg"
+  },
+  {
+    "country": "Azerbaijan",
+    "code": "+994",
+    "startCode": "1F1E6",
+    "endCode": "1F1FF",
+    "emoji": "🇦🇿",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e6-1f1ff.svg"
+  },
+  {
+    "country": "Bahamas",
+    "code": "+242",
+    "startCode": "1F1E7",
+    "endCode": "1F1F8",
+    "emoji": "🇧🇸",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e7-1f1f8.svg"
+  },
+  {
+    "country": "Bahrain",
+    "code": "+973",
+    "startCode": "1F1E7",
+    "endCode": "1F1ED",
+    "emoji": "🇧🇭",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e7-1f1ed.svg"
+  },
+  {
+    "country": "Bangladesh",
+    "code": "+880",
+    "startCode": "1F1E7",
+    "endCode": "1F1E9",
+    "emoji": "🇧🇩",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e7-1f1e9.svg"
+  },
+  {
+    "country": "Barbados",
+    "code": "+246",
+    "startCode": "1F1E7",
+    "endCode": "1F1E7",
+    "emoji": "🇧🇧",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e7-1f1e7.svg"
+  },
+  {
+    "country": "Belarus",
+    "code": "+375",
+    "startCode": "1F1E7",
+    "endCode": "1F1FE",
+    "emoji": "🇧🇾",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e7-1f1fe.svg"
+  },
+  {
+    "country": "Belgium",
+    "code": "+32",
+    "startCode": "1F1E7",
+    "endCode": "1F1EA",
+    "emoji": "🇧🇪",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e7-1f1ea.svg"
+  },
+  {
+    "country": "Belize",
+    "code": "+501",
+    "startCode": "1F1E7",
+    "endCode": "1F1FF",
+    "emoji": "🇧🇿",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e7-1f1ff.svg"
+  },
+  {
+    "country": "Benin",
+    "code": "+229",
+    "startCode": "1F1E7",
+    "endCode": "1F1EF",
+    "emoji": "🇧🇯",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e7-1f1ef.svg"
+  },
+  {
+    "country": "Bermuda",
+    "code": "+441",
+    "startCode": "1F1E7",
+    "endCode": "1F1F2",
+    "emoji": "🇧🇲",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e7-1f1f2.svg"
+  },
+  {
+    "country": "Bhutan",
+    "code": "+975",
+    "startCode": "1F1E7",
+    "endCode": "1F1F9",
+    "emoji": "🇧🇹",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e7-1f1f9.svg"
+  },
+  {
+    "country": "Bolivia",
+    "code": "+591",
+    "startCode": "1F1E7",
+    "endCode": "1F1F4",
+    "emoji": "🇧🇴",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e7-1f1f4.svg"
+  },
+  {
+    "country": "Bosnia and Herzegovina",
+    "code": "+387",
+    "startCode": "1F1E7",
+    "endCode": "1F1E6",
+    "emoji": "🇧🇦",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e7-1f1e6.svg"
+  },
+  {
+    "country": "Botswana",
+    "code": "+267",
+    "startCode": "1F1E7",
+    "endCode": "1F1FC",
+    "emoji": "🇧🇼",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e7-1f1fc.svg"
+  },
+  {
+    "country": "Brazil",
+    "code": "+55",
+    "startCode": "1F1E7",
+    "endCode": "1F1F7",
+    "emoji": "🇧🇷",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e7-1f1f7.svg"
+  },
+  {
+    "country": "British Indian Ocean Territory",
+    "code": "+246",
+    "startCode": "1F1EE",
+    "endCode": "1F1F4",
+    "emoji": "🇮🇴",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1ee-1f1f4.svg"
+  },
+  {
+    "country": "Bulgaria",
+    "code": "+359",
+    "startCode": "1F1E7",
+    "endCode": "1F1EC",
+    "emoji": "🇧🇬",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e7-1f1ec.svg"
+  },
+  {
+    "country": "Burkina Faso",
+    "code": "+226",
+    "startCode": "1F1E7",
+    "endCode": "1F1EB",
+    "emoji": "🇧🇫",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e7-1f1eb.svg"
+  },
+  {
+    "country": "Burundi",
+    "code": "+257",
+    "startCode": "1F1E7",
+    "endCode": "1F1EE",
+    "emoji": "🇧🇮",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e7-1f1ee.svg"
+  },
+  {
+    "country": "Cambodia",
+    "code": "+855",
+    "startCode": "1F1F0",
+    "endCode": "1F1ED",
+    "emoji": "🇰🇭",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f0-1f1ed.svg"
+  },
+  {
+    "country": "Cameroon",
+    "code": "+237",
+    "startCode": "1F1E8",
+    "endCode": "1F1F2",
+    "emoji": "🇨🇲",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e8-1f1f2.svg"
+  },
+  {
+    "country": "Canada",
+    "code": "+1",
+    "startCode": "1F1E8",
+    "endCode": "1F1E6",
+    "emoji": "🇨🇦",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e8-1f1e6.svg"
+  },
+  {
+    "country": "Cape Verde",
+    "code": "+238",
+    "startCode": "1F1E8",
+    "endCode": "1F1FB",
+    "emoji": "🇨🇻",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e8-1f1fb.svg"
+  },
+  {
+    "country": "Cayman Islands",
+    "code": "+345",
+    "startCode": "1F1F0",
+    "endCode": "1F1FE",
+    "emoji": "🇰🇾",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f0-1f1fe.svg"
+  },
+  {
+    "country": "Central African Republic",
+    "code": "+236",
+    "startCode": "1F1E8",
+    "endCode": "1F1EB",
+    "emoji": "🇨🇫",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e8-1f1eb.svg"
+  },
+  {
+    "country": "Chad",
+    "code": "+235",
+    "startCode": "1F1F9",
+    "endCode": "1F1E9",
+    "emoji": "🇹🇩",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f9-1f1e9.svg"
+  },
+  {
+    "country": "Chile",
+    "code": "+56",
+    "startCode": "1F1E8",
+    "endCode": "1F1F1",
+    "emoji": "🇨🇱",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e8-1f1f1.svg"
+  },
+  {
+    "country": "China",
+    "code": "+86",
+    "startCode": "1F1E8",
+    "endCode": "1F1F3",
+    "emoji": "🇨🇳",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e8-1f1f3.svg"
+  },
+  {
+    "country": "Christmas Island",
+    "code": "+61",
+    "startCode": "1F1E8",
+    "endCode": "1F1FD",
+    "emoji": "🇨🇽",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e8-1f1fd.svg"
+  },
+  {
+    "country": "Colombia",
+    "code": "+57",
+    "startCode": "1F1E8",
+    "endCode": "1F1F4",
+    "emoji": "🇨🇴",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e8-1f1f4.svg"
+  },
+  {
+    "country": "Comoros",
+    "code": "+269",
+    "startCode": "1F1F0",
+    "endCode": "1F1F2",
+    "emoji": "🇰🇲",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f0-1f1f2.svg"
+  },
+  {
+    "country": "Cook Islands",
+    "code": "+682",
+    "startCode": "1F1E8",
+    "endCode": "1F1F0",
+    "emoji": "🇨🇰",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e8-1f1f0.svg"
+  },
+  {
+    "country": "Costa Rica",
+    "code": "+506",
+    "startCode": "1F1E8",
+    "endCode": "1F1F7",
+    "emoji": "🇨🇷",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e8-1f1f7.svg"
+  },
+  {
+    "country": "Croatia",
+    "code": "+385",
+    "startCode": "1F1ED",
+    "endCode": "1F1F7",
+    "emoji": "🇭🇷",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1ed-1f1f7.svg"
+  },
+  {
+    "country": "Cuba",
+    "code": "+53",
+    "startCode": "1F1E8",
+    "endCode": "1F1FA",
+    "emoji": "🇨🇺",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e8-1f1fa.svg"
+  },
+  {
+    "country": "Cyprus",
+    "code": "+357",
+    "startCode": "1F1E8",
+    "endCode": "1F1FE",
+    "emoji": "🇨🇾",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e8-1f1fe.svg"
+  },
+  {
+    "country": "Czech Republic",
+    "code": "+420",
+    "startCode": "1F1E8",
+    "endCode": "1F1FF",
+    "emoji": "🇨🇿",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e8-1f1ff.svg"
+  },
+  {
+    "country": "Denmark",
+    "code": "+45",
+    "startCode": "1F1E9",
+    "endCode": "1F1F0",
+    "emoji": "🇩🇰",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e9-1f1f0.svg"
+  },
+  {
+    "country": "Djibouti",
+    "code": "+253",
+    "startCode": "1F1E9",
+    "endCode": "1F1EF",
+    "emoji": "🇩🇯",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e9-1f1ef.svg"
+  },
+  {
+    "country": "Dominica",
+    "code": "+767",
+    "startCode": "1F1E9",
+    "endCode": "1F1F2",
+    "emoji": "🇩🇲",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e9-1f1f2.svg"
+  },
+  {
+    "country": "Dominican Republic",
+    "code": "+809",
+    "startCode": "1F1E9",
+    "endCode": "1F1F4",
+    "emoji": "🇩🇴",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e9-1f1f4.svg"
+  },
+  {
+    "country": "Ecuador",
+    "code": "+593",
+    "startCode": "1F1EA",
+    "endCode": "1F1E8",
+    "emoji": "🇪🇨",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1ea-1f1e8.svg"
+  },
+  {
+    "country": "Egypt",
+    "code": "+20",
+    "startCode": "1F1EA",
+    "endCode": "1F1EC",
+    "emoji": "🇪🇬",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1ea-1f1ec.svg"
+  },
+  {
+    "country": "El Salvador",
+    "code": "+503",
+    "startCode": "1F1F8",
+    "endCode": "1F1FB",
+    "emoji": "🇸🇻",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f8-1f1fb.svg"
+  },
+  {
+    "country": "Equatorial Guinea",
+    "code": "+240",
+    "startCode": "1F1EC",
+    "endCode": "1F1F6",
+    "emoji": "🇬🇶",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1ec-1f1f6.svg"
+  },
+  {
+    "country": "Eritrea",
+    "code": "+291",
+    "startCode": "1F1EA",
+    "endCode": "1F1F7",
+    "emoji": "🇪🇷",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1ea-1f1f7.svg"
+  },
+  {
+    "country": "Estonia",
+    "code": "+372",
+    "startCode": "1F1EA",
+    "endCode": "1F1EA",
+    "emoji": "🇪🇪",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1ea-1f1ea.svg"
+  },
+  {
+    "country": "Ethiopia",
+    "code": "+251",
+    "startCode": "1F1EA",
+    "endCode": "1F1F9",
+    "emoji": "🇪🇹",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1ea-1f1f9.svg"
+  },
+  {
+    "country": "Falkland Islands",
+    "code": "+500",
+    "startCode": "1F1EB",
+    "endCode": "1F1F0",
+    "emoji": "🇫🇰",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1eb-1f1f0.svg"
+  },
+  {
+    "country": "Faroe Islands",
+    "code": "+298",
+    "startCode": "1F1EB",
+    "endCode": "1F1F4",
+    "emoji": "🇫🇴",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1eb-1f1f4.svg"
+  },
+  {
+    "country": "Fiji",
+    "code": "+679",
+    "startCode": "1F1EB",
+    "endCode": "1F1EF",
+    "emoji": "🇫🇯",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1eb-1f1ef.svg"
+  },
+  {
+    "country": "Finland",
+    "code": "+358",
+    "startCode": "1F1EB",
+    "endCode": "1F1EE",
+    "emoji": "🇫🇮",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1eb-1f1ee.svg"
+  },
+  {
+    "country": "France",
+    "code": "+33",
+    "startCode": "1F1EB",
+    "endCode": "1F1F7",
+    "emoji": "🇫🇷",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1eb-1f1f7.svg"
+  },
+  {
+    "country": "French Polynesia",
+    "code": "+689",
+    "startCode": "1F1F5",
+    "endCode": "1F1EB",
+    "emoji": "🇵🇫",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f5-1f1eb.svg"
+  },
+  {
+    "country": "Gabon",
+    "code": "+241",
+    "startCode": "1F1EC",
+    "endCode": "1F1E6",
+    "emoji": "🇬🇦",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1ec-1f1e6.svg"
+  },
+  {
+    "country": "Gambia",
+    "code": "+220",
+    "startCode": "1F1EC",
+    "endCode": "1F1F2",
+    "emoji": "🇬🇲",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1ec-1f1f2.svg"
+  },
+  {
+    "country": "Georgia",
+    "code": "+995",
+    "startCode": "1F1EC",
+    "endCode": "1F1EA",
+    "emoji": "🇬🇪",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1ec-1f1ea.svg"
+  },
+  {
+    "country": "Germany",
+    "code": "+49",
+    "startCode": "1F1E9",
+    "endCode": "1F1EA",
+    "emoji": "🇩🇪",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e9-1f1ea.svg"
+  },
+  {
+    "country": "Ghana",
+    "code": "+233",
+    "startCode": "1F1EC",
+    "endCode": "1F1ED",
+    "emoji": "🇬🇭",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1ec-1f1ed.svg"
+  },
+  {
+    "country": "Gibraltar",
+    "code": "+350",
+    "startCode": "1F1EC",
+    "endCode": "1F1EE",
+    "emoji": "🇬🇮",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1ec-1f1ee.svg"
+  },
+  {
+    "country": "Greece",
+    "code": "+30",
+    "startCode": "1F1EC",
+    "endCode": "1F1F7",
+    "emoji": "🇬🇷",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1ec-1f1f7.svg"
+  },
+  {
+    "country": "Greenland",
+    "code": "+299",
+    "startCode": "1F1EC",
+    "endCode": "1F1F1",
+    "emoji": "🇬🇱",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1ec-1f1f1.svg"
+  },
+  {
+    "country": "Grenada",
+    "code": "+473",
+    "startCode": "1F1EC",
+    "endCode": "1F1E9",
+    "emoji": "🇬🇩",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1ec-1f1e9.svg"
+  },
+  {
+    "country": "Guam",
+    "code": "+671",
+    "startCode": "1F1EC",
+    "endCode": "1F1FA",
+    "emoji": "🇬🇺",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1ec-1f1fa.svg"
+  },
+  {
+    "country": "Guatemala",
+    "code": "+502",
+    "startCode": "1F1EC",
+    "endCode": "1F1F9",
+    "emoji": "🇬🇹",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1ec-1f1f9.svg"
+  },
+  {
+    "country": "Guernsey",
+    "code": "+1481",
+    "startCode": "1F1EC",
+    "endCode": "1F1EC",
+    "emoji": "🇬🇬",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1ec-1f1ec.svg"
+  },
+  {
+    "country": "Guinea",
+    "code": "+224",
+    "startCode": "1F1EC",
+    "endCode": "1F1F3",
+    "emoji": "🇬🇳",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1ec-1f1f3.svg"
+  },
+  {
+    "country": "Guinea-Bissau",
+    "code": "+245",
+    "startCode": "1F1EC",
+    "endCode": "1F1FC",
+    "emoji": "🇬🇼",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1ec-1f1fc.svg"
+  },
+  {
+    "country": "Guyana",
+    "code": "+592",
+    "startCode": "1F1EC",
+    "endCode": "1F1FE",
+    "emoji": "🇬🇾",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1ec-1f1fe.svg"
+  },
+  {
+    "country": "Haiti",
+    "code": "+509",
+    "startCode": "1F1ED",
+    "endCode": "1F1F9",
+    "emoji": "🇭🇹",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1ed-1f1f9.svg"
+  },
+  {
+    "country": "Honduras",
+    "code": "+504",
+    "startCode": "1F1ED",
+    "endCode": "1F1F3",
+    "emoji": "🇭🇳",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1ed-1f1f3.svg"
+  },
+  {
+    "country": "Hong Kong",
+    "code": "+852",
+    "startCode": "1F1ED",
+    "endCode": "1F1F0",
+    "emoji": "🇭🇰",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1ed-1f1f0.svg"
+  },
+  {
+    "country": "Hungary",
+    "code": "+36",
+    "startCode": "1F1ED",
+    "endCode": "1F1FA",
+    "emoji": "🇭🇺",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1ed-1f1fa.svg"
+  },
+  {
+    "country": "Iceland",
+    "code": "+354",
+    "startCode": "1F1EE",
+    "endCode": "1F1F8",
+    "emoji": "🇮🇸",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1ee-1f1f8.svg"
+  },
+  {
+    "country": "India",
+    "code": "+91",
+    "startCode": "1F1EE",
+    "endCode": "1F1F3",
+    "emoji": "🇮🇳",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1ee-1f1f3.svg"
+  },
+  {
+    "country": "Indonesia",
+    "code": "+62",
+    "startCode": "1F1EE",
+    "endCode": "1F1E9",
+    "emoji": "🇮🇩",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1ee-1f1e9.svg"
+  },
+  {
+    "country": "Iran",
+    "code": "+98",
+    "startCode": "1F1EE",
+    "endCode": "1F1F7",
+    "emoji": "🇮🇷",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1ee-1f1f7.svg"
+  },
+  {
+    "country": "Iraq",
+    "code": "+964",
+    "startCode": "1F1EE",
+    "endCode": "1F1F6",
+    "emoji": "🇮🇶",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1ee-1f1f6.svg"
+  },
+  {
+    "country": "Ireland",
+    "code": "+353",
+    "startCode": "1F1EE",
+    "endCode": "1F1EA",
+    "emoji": "🇮🇪",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1ee-1f1ea.svg"
+  },
+  {
+    "country": "Isle of Man",
+    "code": "+1624",
+    "startCode": "1F1EE",
+    "endCode": "1F1F2",
+    "emoji": "🇮🇲",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1ee-1f1f2.svg"
+  },
+  {
+    "country": "Israel",
+    "code": "+972",
+    "startCode": "1F1EE",
+    "endCode": "1F1F1",
+    "emoji": "🇮🇱",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1ee-1f1f1.svg"
+  },
+  {
+    "country": "Italy",
+    "code": "+39",
+    "startCode": "1F1EE",
+    "endCode": "1F1F9",
+    "emoji": "🇮🇹",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1ee-1f1f9.svg"
+  },
+  {
+    "country": "Jamaica",
+    "code": "+876",
+    "startCode": "1F1EF",
+    "endCode": "1F1F2",
+    "emoji": "🇯🇲",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1ef-1f1f2.svg"
+  },
+  {
+    "country": "Japan",
+    "code": "+81",
+    "startCode": "1F1EF",
+    "endCode": "1F1F5",
+    "emoji": "🇯🇵",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1ef-1f1f5.svg"
+  },
+  {
+    "country": "Jersey",
+    "code": "+1534",
+    "startCode": "1F1EF",
+    "endCode": "1F1EA",
+    "emoji": "🇯🇪",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1ef-1f1ea.svg"
+  },
+  {
+    "country": "Jordan",
+    "code": "+962",
+    "startCode": "1F1EF",
+    "endCode": "1F1F4",
+    "emoji": "🇯🇴",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1ef-1f1f4.svg"
+  },
+  {
+    "country": "Kazakhstan",
+    "code": "+7",
+    "startCode": "1F1F0",
+    "endCode": "1F1FF",
+    "emoji": "🇰🇿",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f0-1f1ff.svg"
+  },
+  {
+    "country": "Kenya",
+    "code": "+254",
+    "startCode": "1F1F0",
+    "endCode": "1F1EA",
+    "emoji": "🇰🇪",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f0-1f1ea.svg"
+  },
+  {
+    "country": "Kiribati",
+    "code": "+686",
+    "startCode": "1F1F0",
+    "endCode": "1F1EE",
+    "emoji": "🇰🇮",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f0-1f1ee.svg"
+  },
+  {
+    "country": "Kuwait",
+    "code": "+965",
+    "startCode": "1F1F0",
+    "endCode": "1F1FC",
+    "emoji": "🇰🇼",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f0-1f1fc.svg"
+  },
+  {
+    "country": "Kyrgyzstan",
+    "code": "+996",
+    "startCode": "1F1F0",
+    "endCode": "1F1EC",
+    "emoji": "🇰🇬",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f0-1f1ec.svg"
+  },
+  {
+    "country": "Latvia",
+    "code": "+371",
+    "startCode": "1F1F1",
+    "endCode": "1F1FB",
+    "emoji": "🇱🇻",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f1-1f1fb.svg"
+  },
+  {
+    "country": "Lebanon",
+    "code": "+961",
+    "startCode": "1F1F1",
+    "endCode": "1F1E7",
+    "emoji": "🇱🇧",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f1-1f1e7.svg"
+  },
+  {
+    "country": "Lesotho",
+    "code": "+266",
+    "startCode": "1F1F1",
+    "endCode": "1F1F8",
+    "emoji": "🇱🇸",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f1-1f1f8.svg"
+  },
+  {
+    "country": "Liberia",
+    "code": "+231",
+    "startCode": "1F1F1",
+    "endCode": "1F1F7",
+    "emoji": "🇱🇷",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f1-1f1f7.svg"
+  },
+  {
+    "country": "Libya",
+    "code": "+218",
+    "startCode": "1F1F1",
+    "endCode": "1F1FE",
+    "emoji": "🇱🇾",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f1-1f1fe.svg"
+  },
+  {
+    "country": "Liechtenstein",
+    "code": "+423",
+    "startCode": "1F1F1",
+    "endCode": "1F1EE",
+    "emoji": "🇱🇮",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f1-1f1ee.svg"
+  },
+  {
+    "country": "Lithuania",
+    "code": "+370",
+    "startCode": "1F1F1",
+    "endCode": "1F1F9",
+    "emoji": "🇱🇹",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f1-1f1f9.svg"
+  },
+  {
+    "country": "Luxembourg",
+    "code": "+352",
+    "startCode": "1F1F1",
+    "endCode": "1F1FA",
+    "emoji": "🇱🇺",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f1-1f1fa.svg"
+  },
+  {
+    "country": "Macedonia",
+    "code": "+389",
+    "startCode": "1F1F2",
+    "endCode": "1F1F0",
+    "emoji": "🇲🇰",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f2-1f1f0.svg"
+  },
+  {
+    "country": "Madagascar",
+    "code": "+261",
+    "startCode": "1F1F2",
+    "endCode": "1F1EC",
+    "emoji": "🇲🇬",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f2-1f1ec.svg"
+  },
+  {
+    "country": "Malawi",
+    "code": "+265",
+    "startCode": "1F1F2",
+    "endCode": "1F1FC",
+    "emoji": "🇲🇼",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f2-1f1fc.svg"
+  },
+  {
+    "country": "Malaysia",
+    "code": "+60",
+    "startCode": "1F1F2",
+    "endCode": "1F1FE",
+    "emoji": "🇲🇾",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f2-1f1fe.svg"
+  },
+  {
+    "country": "Maldives",
+    "code": "+960",
+    "startCode": "1F1F2",
+    "endCode": "1F1FB",
+    "emoji": "🇲🇻",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f2-1f1fb.svg"
+  },
+  {
+    "country": "Mali",
+    "code": "+223",
+    "startCode": "1F1F2",
+    "endCode": "1F1F1",
+    "emoji": "🇲🇱",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f2-1f1f1.svg"
+  },
+  {
+    "country": "Malta",
+    "code": "+356",
+    "startCode": "1F1F2",
+    "endCode": "1F1F9",
+    "emoji": "🇲🇹",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f2-1f1f9.svg"
+  },
+  {
+    "country": "Marshall Islands",
+    "code": "+692",
+    "startCode": "1F1F2",
+    "endCode": "1F1ED",
+    "emoji": "🇲🇭",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f2-1f1ed.svg"
+  },
+  {
+    "country": "Mauritania",
+    "code": "+222",
+    "startCode": "1F1F2",
+    "endCode": "1F1F7",
+    "emoji": "🇲🇷",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f2-1f1f7.svg"
+  },
+  {
+    "country": "Mauritius",
+    "code": "+230",
+    "startCode": "1F1F2",
+    "endCode": "1F1FA",
+    "emoji": "🇲🇺",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f2-1f1fa.svg"
+  },
+  {
+    "country": "Mayotte",
+    "code": "+262",
+    "startCode": "1F1FE",
+    "endCode": "1F1F9",
+    "emoji": "🇾🇹",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1fe-1f1f9.svg"
+  },
+  {
+    "country": "Micronesia",
+    "code": "+691",
+    "startCode": "1F1EB",
+    "endCode": "1F1F2",
+    "emoji": "🇫🇲",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1eb-1f1f2.svg"
+  },
+  {
+    "country": "Moldova",
+    "code": "+373",
+    "startCode": "1F1F2",
+    "endCode": "1F1E9",
+    "emoji": "🇲🇩",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f2-1f1e9.svg"
+  },
+  {
+    "country": "Monaco",
+    "code": "+377",
+    "startCode": "1F1F2",
+    "endCode": "1F1E8",
+    "emoji": "🇲🇨",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f2-1f1e8.svg"
+  },
+  {
+    "country": "Mongolia",
+    "code": "+976",
+    "startCode": "1F1F2",
+    "endCode": "1F1F3",
+    "emoji": "🇲🇳",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f2-1f1f3.svg"
+  },
+  {
+    "country": "Montenegro",
+    "code": "+382",
+    "startCode": "1F1F2",
+    "endCode": "1F1EA",
+    "emoji": "🇲🇪",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f2-1f1ea.svg"
+  },
+  {
+    "country": "Montserrat",
+    "code": "+664",
+    "startCode": "1F1F2",
+    "endCode": "1F1F8",
+    "emoji": "🇲🇸",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f2-1f1f8.svg"
+  },
+  {
+    "country": "Morocco",
+    "code": "+212",
+    "startCode": "1F1F2",
+    "endCode": "1F1E6",
+    "emoji": "🇲🇦",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f2-1f1e6.svg"
+  },
+  {
+    "country": "Mozambique",
+    "code": "+258",
+    "startCode": "1F1F2",
+    "endCode": "1F1FF",
+    "emoji": "🇲🇿",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f2-1f1ff.svg"
+  },
+  {
+    "country": "Myanmar",
+    "code": "+95",
+    "startCode": "1F1F2",
+    "endCode": "1F1F2",
+    "emoji": "🇲🇲",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f2-1f1f2.svg"
+  },
+  {
+    "country": "Namibia",
+    "code": "+264",
+    "startCode": "1F1F3",
+    "endCode": "1F1E6",
+    "emoji": "🇳🇦",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f3-1f1e6.svg"
+  },
+  {
+    "country": "Nauru",
+    "code": "+674",
+    "startCode": "1F1F3",
+    "endCode": "1F1F7",
+    "emoji": "🇳🇷",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f3-1f1f7.svg"
+  },
+  {
+    "country": "Nepal",
+    "code": "+977",
+    "startCode": "1F1F3",
+    "endCode": "1F1F5",
+    "emoji": "🇳🇵",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f3-1f1f5.svg"
+  },
+  {
+    "country": "Netherlands",
+    "code": "+31",
+    "startCode": "1F1F3",
+    "endCode": "1F1F1",
+    "emoji": "🇳🇱",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f3-1f1f1.svg"
+  },
+  {
+    "country": "New Caledonia",
+    "code": "+687",
+    "startCode": "1F1F3",
+    "endCode": "1F1E8",
+    "emoji": "🇳🇨",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f3-1f1e8.svg"
+  },
+  {
+    "country": "New Zealand",
+    "code": "+64",
+    "startCode": "1F1F3",
+    "endCode": "1F1FF",
+    "emoji": "🇳🇿",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f3-1f1ff.svg"
+  },
+  {
+    "country": "Nicaragua",
+    "code": "+505",
+    "startCode": "1F1F3",
+    "endCode": "1F1EE",
+    "emoji": "🇳🇮",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f3-1f1ee.svg"
+  },
+  {
+    "country": "Niger",
+    "code": "+227",
+    "startCode": "1F1F3",
+    "endCode": "1F1EA",
+    "emoji": "🇳🇪",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f3-1f1ea.svg"
+  },
+  {
+    "country": "Nigeria",
+    "code": "+234",
+    "startCode": "1F1F3",
+    "endCode": "1F1EC",
+    "emoji": "🇳🇬",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f3-1f1ec.svg"
+  },
+  {
+    "country": "Niue",
+    "code": "+683",
+    "startCode": "1F1F3",
+    "endCode": "1F1FA",
+    "emoji": "🇳🇺",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f3-1f1fa.svg"
+  },
+  {
+    "country": "North Korea",
+    "code": "+850",
+    "startCode": "1F1F0",
+    "endCode": "1F1F5",
+    "emoji": "🇰🇵",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f0-1f1f5.svg"
+  },
+  {
+    "country": "Northern Mariana Islands",
+    "code": "+670",
+    "startCode": "1F1F2",
+    "endCode": "1F1F5",
+    "emoji": "🇲🇵",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f2-1f1f5.svg"
+  },
+  {
+    "country": "Norway",
+    "code": "+47",
+    "startCode": "1F1F3",
+    "endCode": "1F1F4",
+    "emoji": "🇳🇴",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f3-1f1f4.svg"
+  },
+  {
+    "country": "Oman",
+    "code": "+968",
+    "startCode": "1F1F4",
+    "endCode": "1F1F2",
+    "emoji": "🇴🇲",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f4-1f1f2.svg"
+  },
+  {
+    "country": "Pakistan",
+    "code": "+92",
+    "startCode": "1F1F5",
+    "endCode": "1F1F0",
+    "emoji": "🇵🇰",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f5-1f1f0.svg"
+  },
+  {
+    "country": "Palau",
+    "code": "+680",
+    "startCode": "1F1F5",
+    "endCode": "1F1FC",
+    "emoji": "🇵🇼",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f5-1f1fc.svg"
+  },
+  {
+    "country": "Panama",
+    "code": "+507",
+    "startCode": "1F1F5",
+    "endCode": "1F1E6",
+    "emoji": "🇵🇦",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f5-1f1e6.svg"
+  },
+  {
+    "country": "Papua New Guinea",
+    "code": "+675",
+    "startCode": "1F1F5",
+    "endCode": "1F1EC",
+    "emoji": "🇵🇬",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f5-1f1ec.svg"
+  },
+  {
+    "country": "Paraguay",
+    "code": "+595",
+    "startCode": "1F1F5",
+    "endCode": "1F1FE",
+    "emoji": "🇵🇾",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f5-1f1fe.svg"
+  },
+  {
+    "country": "Peru",
+    "code": "+51",
+    "startCode": "1F1F5",
+    "endCode": "1F1EA",
+    "emoji": "🇵🇪",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f5-1f1ea.svg"
+  },
+  {
+    "country": "Philippines",
+    "code": "+63",
+    "startCode": "1F1F5",
+    "endCode": "1F1ED",
+    "emoji": "🇵🇭",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f5-1f1ed.svg"
+  },
+  {
+    "country": "Pitcairn",
+    "code": "+64",
+    "startCode": "1F1F5",
+    "endCode": "1F1F3",
+    "emoji": "🇵🇳",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f5-1f1f3.svg"
+  },
+  {
+    "country": "Poland",
+    "code": "+48",
+    "startCode": "1F1F5",
+    "endCode": "1F1F1",
+    "emoji": "🇵🇱",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f5-1f1f1.svg"
+  },
+  {
+    "country": "Portugal",
+    "code": "+351",
+    "startCode": "1F1F5",
+    "endCode": "1F1F9",
+    "emoji": "🇵🇹",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f5-1f1f9.svg"
+  },
+  {
+    "country": "Puerto Rico",
+    "code": "+787",
+    "startCode": "1F1F5",
+    "endCode": "1F1F7",
+    "emoji": "🇵🇷",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f5-1f1f7.svg"
+  },
+  {
+    "country": "Qatar",
+    "code": "+974",
+    "startCode": "1F1F6",
+    "endCode": "1F1E6",
+    "emoji": "🇶🇦",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f6-1f1e6.svg"
+  },
+  {
+    "country": "Romania",
+    "code": "+40",
+    "startCode": "1F1F7",
+    "endCode": "1F1F4",
+    "emoji": "🇷🇴",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f7-1f1f4.svg"
+  },
+  {
+    "country": "Russia",
+    "code": "+7",
+    "startCode": "1F1F7",
+    "endCode": "1F1FA",
+    "emoji": "🇷🇺",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f7-1f1fa.svg"
+  },
+  {
+    "country": "Rwanda",
+    "code": "+250",
+    "startCode": "1F1F7",
+    "endCode": "1F1FC",
+    "emoji": "🇷🇼",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f7-1f1fc.svg"
+  },
+  {
+    "country": "Saint Kitts and Nevis",
+    "code": "+869",
+    "startCode": "1F1F0",
+    "endCode": "1F1F3",
+    "emoji": "🇰🇳",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f0-1f1f3.svg"
+  },
+  {
+    "country": "Saint Lucia",
+    "code": "+758",
+    "startCode": "1F1F1",
+    "endCode": "1F1E8",
+    "emoji": "🇱🇨",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f1-1f1e8.svg"
+  },
+  {
+    "country": "Saint Pierre and Miquelon",
+    "code": "+508",
+    "startCode": "1F1F5",
+    "endCode": "1F1F2",
+    "emoji": "🇵🇲",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f5-1f1f2.svg"
+  },
+  {
+    "country": "Saint Vincent and the Grenadines",
+    "code": "+784",
+    "startCode": "1F1FB",
+    "endCode": "1F1E8",
+    "emoji": "🇻🇨",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1fb-1f1e8.svg"
+  },
+  {
+    "country": "Samoa",
+    "code": "+685",
+    "startCode": "1F1FC",
+    "endCode": "1F1F8",
+    "emoji": "🇼🇸",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1fc-1f1f8.svg"
+  },
+  {
+    "country": "San Marino",
+    "code": "+378",
+    "startCode": "1F1F8",
+    "endCode": "1F1F2",
+    "emoji": "🇸🇲",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f8-1f1f2.svg"
+  },
+  {
+    "country": "Sao Tome and Principe",
+    "code": "+239",
+    "startCode": "1F1F8",
+    "endCode": "1F1F9",
+    "emoji": "🇸🇹",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f8-1f1f9.svg"
+  },
+  {
+    "country": "Saudi Arabia",
+    "code": "+966",
+    "startCode": "1F1F8",
+    "endCode": "1F1E6",
+    "emoji": "🇸🇦",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f8-1f1e6.svg"
+  },
+  {
+    "country": "Senegal",
+    "code": "+221",
+    "startCode": "1F1F8",
+    "endCode": "1F1F3",
+    "emoji": "🇸🇳",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f8-1f1f3.svg"
+  },
+  {
+    "country": "Serbia",
+    "code": "+381",
+    "startCode": "1F1F7",
+    "endCode": "1F1F8",
+    "emoji": "🇷🇸",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f7-1f1f8.svg"
+  },
+  {
+    "country": "Seychelles",
+    "code": "+248",
+    "startCode": "1F1F8",
+    "endCode": "1F1E8",
+    "emoji": "🇸🇨",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f8-1f1e8.svg"
+  },
+  {
+    "country": "Sierra Leone",
+    "code": "+232",
+    "startCode": "1F1F8",
+    "endCode": "1F1F1",
+    "emoji": "🇸🇱",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f8-1f1f1.svg"
+  },
+  {
+    "country": "Singapore",
+    "code": "+65",
+    "startCode": "1F1F8",
+    "endCode": "1F1EC",
+    "emoji": "🇸🇬",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f8-1f1ec.svg"
+  },
+  {
+    "country": "Slovakia",
+    "code": "+421",
+    "startCode": "1F1F8",
+    "endCode": "1F1F0",
+    "emoji": "🇸🇰",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f8-1f1f0.svg"
+  },
+  {
+    "country": "Slovenia",
+    "code": "+386",
+    "startCode": "1F1F8",
+    "endCode": "1F1EE",
+    "emoji": "🇸🇮",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f8-1f1ee.svg"
+  },
+  {
+    "country": "Solomon Islands",
+    "code": "+677",
+    "startCode": "1F1F8",
+    "endCode": "1F1E7",
+    "emoji": "🇸🇧",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f8-1f1e7.svg"
+  },
+  {
+    "country": "Somalia",
+    "code": "+252",
+    "startCode": "1F1F8",
+    "endCode": "1F1F4",
+    "emoji": "🇸🇴",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f8-1f1f4.svg"
+  },
+  {
+    "country": "South Africa",
+    "code": "+27",
+    "startCode": "1F1FF",
+    "endCode": "1F1E6",
+    "emoji": "🇿🇦",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1ff-1f1e6.svg"
+  },
+  {
+    "country": "South Korea",
+    "code": "+82",
+    "startCode": "1F1F0",
+    "endCode": "1F1F7",
+    "emoji": "🇰🇷",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f0-1f1f7.svg"
+  },
+  {
+    "country": "South Sudan",
+    "code": "+211",
+    "startCode": "1F1F8",
+    "endCode": "1F1F8",
+    "emoji": "🇸🇸",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f8-1f1f8.svg"
+  },
+  {
+    "country": "Spain",
+    "code": "+34",
+    "startCode": "1F1EA",
+    "endCode": "1F1F8",
+    "emoji": "🇪🇸",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1ea-1f1f8.svg"
+  },
+  {
+    "country": "Sri Lanka",
+    "code": "+94",
+    "startCode": "1F1F1",
+    "endCode": "1F1F0",
+    "emoji": "🇱🇰",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f1-1f1f0.svg"
+  },
+  {
+    "country": "Sudan",
+    "code": "+249",
+    "startCode": "1F1F8",
+    "endCode": "1F1E9",
+    "emoji": "🇸🇩",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f8-1f1e9.svg"
+  },
+  {
+    "country": "Suriname",
+    "code": "+597",
+    "startCode": "1F1F8",
+    "endCode": "1F1F7",
+    "emoji": "🇸🇷",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f8-1f1f7.svg"
+  },
+  {
+    "country": "Svalbard and Jan Mayen",
+    "code": "+47",
+    "startCode": "1F1F8",
+    "endCode": "1F1EF",
+    "emoji": "🇸🇯",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f8-1f1ef.svg"
+  },
+  {
+    "country": "Swaziland",
+    "code": "+268",
+    "startCode": "1F1F8",
+    "endCode": "1F1FF",
+    "emoji": "🇸🇿",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f8-1f1ff.svg"
+  },
+  {
+    "country": "Sweden",
+    "code": "+46",
+    "startCode": "1F1F8",
+    "endCode": "1F1EA",
+    "emoji": "🇸🇪",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f8-1f1ea.svg"
+  },
+  {
+    "country": "Switzerland",
+    "code": "+41",
+    "startCode": "1F1E8",
+    "endCode": "1F1ED",
+    "emoji": "🇨🇭",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e8-1f1ed.svg"
+  },
+  {
+    "country": "Taiwan",
+    "code": "+886",
+    "startCode": "1F1F9",
+    "endCode": "1F1FC",
+    "emoji": "🇹🇼",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f9-1f1fc.svg"
+  },
+  {
+    "country": "Tajikistan",
+    "code": "+992",
+    "startCode": "1F1F9",
+    "endCode": "1F1EF",
+    "emoji": "🇹🇯",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f9-1f1ef.svg"
+  },
+  {
+    "country": "Tanzania",
+    "code": "+255",
+    "startCode": "1F1F9",
+    "endCode": "1F1FF",
+    "emoji": "🇹🇿",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f9-1f1ff.svg"
+  },
+  {
+    "country": "Thailand",
+    "code": "+66",
+    "startCode": "1F1F9",
+    "endCode": "1F1ED",
+    "emoji": "🇹🇭",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f9-1f1ed.svg"
+  },
+  {
+    "country": "Togo",
+    "code": "+228",
+    "startCode": "1F1F9",
+    "endCode": "1F1EC",
+    "emoji": "🇹🇬",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f9-1f1ec.svg"
+  },
+  {
+    "country": "Tokelau",
+    "code": "+690",
+    "startCode": "1F1F9",
+    "endCode": "1F1F0",
+    "emoji": "🇹🇰",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f9-1f1f0.svg"
+  },
+  {
+    "country": "Tonga",
+    "code": "+676",
+    "startCode": "1F1F9",
+    "endCode": "1F1F4",
+    "emoji": "🇹🇴",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f9-1f1f4.svg"
+  },
+  {
+    "country": "Trinidad and Tobago",
+    "code": "+868",
+    "startCode": "1F1F9",
+    "endCode": "1F1F9",
+    "emoji": "🇹🇹",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f9-1f1f9.svg"
+  },
+  {
+    "country": "Tunisia",
+    "code": "+216",
+    "startCode": "1F1F9",
+    "endCode": "1F1F3",
+    "emoji": "🇹🇳",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f9-1f1f3.svg"
+  },
+  {
+    "country": "Turkey",
+    "code": "+90",
+    "startCode": "1F1F9",
+    "endCode": "1F1F7",
+    "emoji": "🇹🇷",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f9-1f1f7.svg"
+  },
+  {
+    "country": "Turkmenistan",
+    "code": "+993",
+    "startCode": "1F1F9",
+    "endCode": "1F1F2",
+    "emoji": "🇹🇲",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f9-1f1f2.svg"
+  },
+  {
+    "country": "Turks and Caicos Islands",
+    "code": "+649",
+    "startCode": "1F1F9",
+    "endCode": "1F1E8",
+    "emoji": "🇹🇨",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f9-1f1e8.svg"
+  },
+  {
+    "country": "Tuvalu",
+    "code": "+688",
+    "startCode": "1F1F9",
+    "endCode": "1F1FB",
+    "emoji": "🇹🇻",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1f9-1f1fb.svg"
+  },
+  {
+    "country": "Uganda",
+    "code": "+256",
+    "startCode": "1F1FA",
+    "endCode": "1F1EC",
+    "emoji": "🇺🇬",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1fa-1f1ec.svg"
+  },
+  {
+    "country": "Ukraine",
+    "code": "+380",
+    "startCode": "1F1FA",
+    "endCode": "1F1E6",
+    "emoji": "🇺🇦",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1fa-1f1e6.svg"
+  },
+  {
+    "country": "United Arab Emirates",
+    "code": "+971",
+    "startCode": "1F1E6",
+    "endCode": "1F1EA",
+    "emoji": "🇦🇪",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1e6-1f1ea.svg"
+  },
+  {
+    "country": "United Kingdom",
+    "code": "+44",
+    "startCode": "1F1EC",
+    "endCode": "1F1E7",
+    "emoji": "🇬🇧",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1ec-1f1e7.svg"
+  },
+  {
+    "country": "Uruguay",
+    "code": "+598",
+    "startCode": "1F1FA",
+    "endCode": "1F1FE",
+    "emoji": "🇺🇾",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1fa-1f1fe.svg"
+  },
+  {
+    "country": "Uzbekistan",
+    "code": "+998",
+    "startCode": "1F1FA",
+    "endCode": "1F1FF",
+    "emoji": "🇺🇿",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1fa-1f1ff.svg"
+  },
+  {
+    "country": "Vanuatu",
+    "code": "+678",
+    "startCode": "1F1FB",
+    "endCode": "1F1FA",
+    "emoji": "🇻🇺",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1fb-1f1fa.svg"
+  },
+  {
+    "country": "Venezuela",
+    "code": "+58",
+    "startCode": "1F1FB",
+    "endCode": "1F1EA",
+    "emoji": "🇻🇪",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1fb-1f1ea.svg"
+  },
+  {
+    "country": "Wallis and Futuna",
+    "code": "+681",
+    "startCode": "1F1FC",
+    "endCode": "1F1EB",
+    "emoji": "🇼🇫",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1fc-1f1eb.svg"
+  },
+  {
+    "country": "Western Sahara",
+    "code": "+212",
+    "startCode": "1F1EA",
+    "endCode": "1F1ED",
+    "emoji": "🇪🇭",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1ea-1f1ed.svg"
+  },
+  {
+    "country": "Yemen",
+    "code": "+967",
+    "startCode": "1F1FE",
+    "endCode": "1F1EA",
+    "emoji": "🇾🇪",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1fe-1f1ea.svg"
+  },
+  {
+    "country": "Zambia",
+    "code": "+260",
+    "startCode": "1F1FF",
+    "endCode": "1F1F2",
+    "emoji": "🇿🇲",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1ff-1f1f2.svg"
+  },
+  {
+    "country": "Zimbabwe",
+    "code": "+263",
+    "startCode": "1F1FF",
+    "endCode": "1F1FC",
+    "emoji": "🇿🇼",
+    "svgURL": "https://twemoji.maxcdn.com/v/12.1.5/svg/1f1ff-1f1fc.svg"
+  }
+]
