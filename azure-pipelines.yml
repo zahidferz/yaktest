@@ -48,7 +48,7 @@ jobs:
           sudo -- sh -c -e "echo '127.0.0.1 dev.local' >> /etc/hosts";
           ls
           echo "--------------------------------"
-          $(System.DefaultWorkingDirectory)/gx-yak-tests/
+          cd $(System.DefaultWorkingDirectory)/gx-yak-tests/
           ls
         displayName: 'Edit Host'
 
