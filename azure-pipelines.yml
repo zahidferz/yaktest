@@ -37,6 +37,10 @@ jobs:
     steps:
       - bash: echo "##vso[build.updatebuildnumber]$(buildVersion)" # Update build number in Pipeline UI
         displayName: Update build number
+      
+      - checkout: self
+      - checkout: MyGitHubRepo
+
 
       - task: NodeTool@0
         inputs:
