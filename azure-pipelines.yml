@@ -48,7 +48,7 @@ jobs:
         displayName: 'Install Node.js'
 
       - script: |
-          cd 
+          cd $(System.DefaultWorkingDirectory)/yaktest
           sudo -- sh -c -e "echo '127.0.0.1 dev.local' >> /etc/hosts";
           ls
           echo "--------------------------------"
