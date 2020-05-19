@@ -44,10 +44,11 @@ jobs:
         displayName: 'Install Node.js'
 
       - script: |
+          cd 
           sudo -- sh -c -e "echo '127.0.0.1 dev.local' >> /etc/hosts";
           ls
           echo "--------------------------------"
-          cd $(System.DefaultWorkingDirectory)
+          $(System.DefaultWorkingDirectory)/gx-yak-tests/
           ls
         displayName: 'Edit Host'
 

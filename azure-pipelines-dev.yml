@@ -34,7 +34,7 @@ jobs:
         displayName: 'Install Node.js'
 
       - script: |
-# sudo -- sh -c -e "echo '127.0.0.1 dev.local' >> /etc/hosts";
+         sudo -- sh -c -e "echo '127.0.0.1 dev.local' >> /etc/hosts";
           ls
           echo "--------------------------------"
           cd $(System.DefaultWorkingDirectory)
