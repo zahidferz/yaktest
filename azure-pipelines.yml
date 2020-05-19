@@ -45,6 +45,10 @@ jobs:
 
       - script: |
           sudo -- sh -c -e "echo '127.0.0.1 dev.local' >> /etc/hosts";
+          ls
+          echo "--------------------------------"
+          cd $(System.DefaultWorkingDirectory)
+          ls
         displayName: 'Edit Host'
 
       - task: Cache@2
