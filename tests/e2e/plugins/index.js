@@ -1,5 +1,7 @@
 // https://docs.cypress.io/guides/guides/plugins-guide.html
+const cucumber = require('cypress-cucumber-preprocessor').default
 module.exports = (on, config) => {
+  on('file:preprocessor', cucumber())
   // Dynamic configuration
   // https://docs.cypress.io/guides/references/configuration.html
   return Object.assign({}, config, {
