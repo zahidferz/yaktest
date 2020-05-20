@@ -87,7 +87,7 @@ jobs:
         workingDirectory: $(System.DefaultWorkingDirectory)/yaktest/
 
       - script: |
-          npm run test:e2e -s "tests/e2e/specs/Desktop/*"
+          npx cypress run test:e2e --specs "tests/e2e/specs/Desktop/*"
         #  npx cypress run --record --parallel --ci-build-id $(buildVersion) --group "Desktop" -s "cypress/integration/Desktop/*"
         #  npx cypress run --record --parallel --ci-build-id $(buildVersion) --group "Mobile" -s "cypress/integration/Mobile/*"
 
