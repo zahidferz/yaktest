@@ -49,7 +49,7 @@ jobs:
 
       - script: |
           sudo -- sh -c -e "echo '127.0.0.1 dev.local' >> /etc/hosts";
-          cp $(System.DefaultWorkingDirectory)/gx-yak-tests/cypress/integration -r $(System.DefaultWorkingDirectory)/yaktest/tests/e2e/specs
+          cp -a $(System.DefaultWorkingDirectory)/gx-yak-tests/cypress/integration/. $(System.DefaultWorkingDirectory)/yaktest/tests/e2e/specs
           cd $(System.DefaultWorkingDirectory)/yaktest/
 
           
