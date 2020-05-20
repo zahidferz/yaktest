@@ -48,12 +48,11 @@ jobs:
         displayName: 'Install Node.js'
 
       - script: |
-          cd $(System.DefaultWorkingDirectory)/yaktest
           sudo -- sh -c -e "echo '127.0.0.1 dev.local' >> /etc/hosts";
-          ls
-          echo "--------------------------------"
-          cd $(System.DefaultWorkingDirectory)/gx-yak-tests/
-          ls
+          cp $(System.DefaultWorkingDirectory)/gx-yak-tests/cypress/integration -r $(System.DefaultWorkingDirectory)/yaktest/tests/e2e/specs
+          cd $(System.DefaultWorkingDirectory)/yaktest/
+          ls tests/e2e/specs/Desktop
+          
         displayName: 'Edit Host'
 
       - task: Cache@2
@@ -88,8 +87,7 @@ jobs:
           VUE_APP_INTERCOM: $(VUE_APP_INTERCOM)
 
       - script: |
-          npm run start:ci &
-          npx cypress run  -s "$(System.DefaultWorkingDirectory)/gx-yak-tests/cypress/integration/Desktop/*"
+          npx cypress run test:e2e -s "/Desktop/*"
         #  npx cypress run --record --parallel --ci-build-id $(buildVersion) --group "Desktop" -s "cypress/integration/Desktop/*"
         #  npx cypress run --record --parallel --ci-build-id $(buildVersion) --group "Mobile" -s "cypress/integration/Mobile/*"
 

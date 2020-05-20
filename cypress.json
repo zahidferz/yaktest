@@ -2,6 +2,7 @@
   "pluginsFile": "tests/e2e/plugins/index.js",
    "testFiles": "**/*.{feature,features}",
    "chromeWebSecurity": false,
+   "integrationFolder": "tests/e2e/specs",
    "defaultCommandTimeout": 18000,
    "reporter": "junit",
    "reporterOptions": {
