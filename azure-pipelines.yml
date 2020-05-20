@@ -110,7 +110,6 @@ jobs:
           artifactName: 'screenshots'
           targetPath: '$(Build.SourcesDirectory)/tests/e2e/screenshots'
           publishLocation: 'pipeline'
-    
       
       - task: PublishPipelineArtifact@0
         displayName: 'Publish Videos (Cypress)'
