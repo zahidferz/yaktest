@@ -49,10 +49,8 @@ jobs:
 
       - script: |
           sudo -- sh -c -e "echo '127.0.0.1 dev.local' >> /etc/hosts";
-          cp $(System.DefaultWorkingDirectory)/gx-yak-tests/cypress/integration -r $(System.DefaultWorkingDirectory)/yaktest/tests/e2e/specs
-          cd $(System.DefaultWorkingDirectory)/yaktest/
+          cp -a $(System.DefaultWorkingDirectory)/gx-yak-tests/cypress/integration/.  $(System.DefaultWorkingDirectory)/yaktest/tests/e2e/specs
 
-          
         displayName: 'Edit Host'
 
       - task: Cache@2
@@ -62,6 +60,7 @@ jobs:
              npm | "$(Agent.OS)"
           path: $(npm_config_cache)
         displayName: Cache npm
+        workingDirectory: $(System.DefaultWorkingDirectory)/yaktest/
 
       - task: Cache@2
         inputs:
@@ -69,10 +68,13 @@ jobs:
           path: /home/vsts/.cache/Cypress
           restoreKeys: cypress | $(Agent.OS) | package-lock.json
         displayName: Cache Cypress binary
+        workingDirectory: $(System.DefaultWorkingDirectory)/yaktest/
 
       - script: |
           npm ci
         displayName: 'Install dependencies'
+        workingDirectory: $(System.DefaultWorkingDirectory)/yaktest/
+
 
       - script: |
           npm run test:unit
@@ -85,6 +87,7 @@ jobs:
           VUE_APP_AUTH_URL_CLIENT_ID: $(VUE_APP_AUTH_URL_CLIENT_ID)
           VUE_APP_AUTH_URL_APP_SECRET: $(VUE_APP_AUTH_URL_APP_SECRET)
           VUE_APP_INTERCOM: $(VUE_APP_INTERCOM)
+        workingDirectory: $(System.DefaultWorkingDirectory)/yaktest/
 
       - script: |
           npx cypress run test:e2e -s "/Desktop/*"
@@ -101,6 +104,7 @@ jobs:
           VUE_APP_AUTH_URL_APP_SECRET: $(VUE_APP_AUTH_URL_APP_SECRET)
           CYPRESS_HOST: "$(CYPRESS_HOST)"
         timeoutInMinutes: 15
+        workingDirectory: $(System.DefaultWorkingDirectory)/yaktest/
 
       #- task: PublishPipelineArtifact@0
       #  displayName: 'Publish Screenshots (Cypress)'
@@ -135,6 +139,7 @@ jobs:
           VUE_APP_AUTH_URL_CLIENT_ID: $(VUE_APP_AUTH_URL_CLIENT_ID)
           VUE_APP_AUTH_URL_APP_SECRET: $(VUE_APP_AUTH_URL_APP_SECRET)
           VUE_APP_INTERCOM: $(VUE_APP_INTERCOM)
+        workingDirectory: $(System.DefaultWorkingDirectory)/yaktest/
 
       - task: ArchiveFiles@2
         inputs:
