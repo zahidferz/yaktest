@@ -56,11 +56,10 @@ jobs:
       - task: Cache@2
         inputs:
           key: 'npm | "$(Agent.OS)" | package-lock.json'
-          restoreKeys: |
-             npm | "$(Agent.OS)"
-          path: $(npm_config_cache)
+          path: '$(npm_config_cache)/yaktest/'
+          restoreKeys: 'npm | "$(Agent.OS)"'
         displayName: Cache npm
-        workingDirectory: $(System.DefaultWorkingDirectory)/yaktest/
+
 
       - task: Cache@2
         inputs:
@@ -68,7 +67,6 @@ jobs:
           path: /home/vsts/.cache/Cypress
           restoreKeys: cypress | $(Agent.OS) | package-lock.json
         displayName: Cache Cypress binary
-        workingDirectory: $(System.DefaultWorkingDirectory)/yaktest/
 
       - script: |
           npm ci
