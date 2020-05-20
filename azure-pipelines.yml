@@ -89,6 +89,7 @@ jobs:
 
       - script: |
           npm run test:e2e -- --headless --spec "tests/e2e/specs/Desktop/*"
+          npm run test:e2e -- --headless --spec "tests/e2e/specs/Mobile/*"
         #  npx cypress run --record --parallel --ci-build-id $(buildVersion) --group "Desktop" -s "cypress/integration/Desktop/*"
         #  npx cypress run --record --parallel --ci-build-id $(buildVersion) --group "Mobile" -s "cypress/integration/Mobile/*"
 
@@ -142,7 +143,7 @@ jobs:
 
       - task: ArchiveFiles@2
         inputs:
-          rootFolderOrFile: '$(System.DefaultWorkingDirectory)/dist'
+          rootFolderOrFile: '$(System.DefaultWorkingDirectory)/yaktest/dist'
           includeRootFolder: true
 
       # - task: ArchiveFiles@2
