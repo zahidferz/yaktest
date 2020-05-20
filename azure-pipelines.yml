@@ -50,8 +50,11 @@ jobs:
       - script: |
           sudo -- sh -c -e "echo '127.0.0.1 dev.local' >> /etc/hosts";
           cp -a $(System.DefaultWorkingDirectory)/gx-yak-tests/cypress/integration/.  $(System.DefaultWorkingDirectory)/yaktest/tests/e2e/specs
-
-        displayName: 'Edit Host'
+          cp -a $(System.DefaultWorkingDirectory)/gx-yak-tests/cypress/plugins/. $(System.DefaultWorkingDirectory)/yaktest/tests/e2e/plugins
+          cp -a $(System.DefaultWorkingDirectory)/gx-yak-tests/cypress/fixtures/. $(System.DefaultWorkingDirectory)/yaktest/tests/e2e/fixtures
+          cp -a $(System.DefaultWorkingDirectory)/gx-yak-tests/cypress/support/. $(System.DefaultWorkingDirectory)/yaktest/tests/e2e/support
+          cp -a $(System.DefaultWorkingDirectory)/gx-yak-tests/cypress.env.json $(System.DefaultWorkingDirectory)/yaktest/
+        displayName: 'Setting up Cypress'
 
       - task: Cache@2
         inputs:
@@ -88,7 +91,7 @@ jobs:
         workingDirectory: $(System.DefaultWorkingDirectory)/yaktest/
 
       - script: |
-          npm run test:e2e -- --headless --spec "tests/e2e/specs/Desktop/*" && npm run test:e2e -- --headless --spec "tests/e2e/specs/Mobile/*"
+          npm run test:e2e -- --spec "tests/e2e/specs/Desktop/*" && npm run test:e2e -- --spec "tests/e2e/specs/Mobile/*"
         #  npx cypress run --record --parallel --ci-build-id $(buildVersion) --group "Desktop" -s "cypress/integration/Desktop/*"
         #  npx cypress run --record --parallel --ci-build-id $(buildVersion) --group "Mobile" -s "cypress/integration/Mobile/*"
 

@@ -1,14 +1,18 @@
 {
   "pluginsFile": "tests/e2e/plugins/index.js",
+  "supportFile": "tests/e2e/support/setup.js",
+  "screenshotsFolder": "tests/e2e/specs",
+  "integrationFolder": "tests/e2e/specs",
+  "videosFolder": "tests/e2e/specs",
+  "fixturesFolder": "tests/e2e/fixtures",
   "testFiles": "**/*.{feature,features}",
-   "ignoreTestFiles": "*.js",
-   "chromeWebSecurity": false,
-   "integrationFolder": "tests/e2e/specs",
-   "defaultCommandTimeout": 18000,
-   "reporter": "junit",
-   "reporterOptions": {
-     "mochaFile": "results/Test_Results.xml",
-     "toConsole": true
-    },
-    "projectId": "y5ds2g"
+  "ignoreTestFiles": "*.js",
+  "chromeWebSecurity": false,
+  "defaultCommandTimeout": 18000,
+  "reporter": "junit",
+  "reporterOptions": {
+    "mochaFile": "results/Test_Results.xml",
+    "toConsole": true
+  },
+  "projectId": "y5ds2g"
 }
