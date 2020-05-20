@@ -62,7 +62,7 @@ jobs:
 
       - task: Cache@2
         inputs:
-          key: cypress | $(Agent.OS) | $(System.DefaultWorkingDirectory)/yaktest/package-lock.json'
+          key: 'cypress | $(Agent.OS) | $(System.DefaultWorkingDirectory)/yaktest/package-lock.json'
           path: /home/vsts/.cache/Cypress
           restoreKeys: cypress | $(Agent.OS) | $(System.DefaultWorkingDirectory)/yaktest/package-lock.json'
         displayName: Cache Cypress binary
