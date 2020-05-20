@@ -108,7 +108,7 @@ jobs:
         condition: failed()
         inputs:
           artifactName: 'screenshots'
-          targetPath: '$(Build.SourcesDirectory)/tests/e2e/screenshots'
+          targetPath: '$(Build.SourcesDirectory)/yaktest/tests/e2e/screenshots'
           publishLocation: 'pipeline'
       
       - task: PublishPipelineArtifact@0
@@ -116,7 +116,7 @@ jobs:
         condition: failed()
         inputs:
           artifactName: 'videos'
-          targetPath: '$(Build.SourcesDirectory)/tests/e2e/videos'
+          targetPath: '$(Build.SourcesDirectory)/yaktest/tests/e2e/videos'
           publishLocation: 'pipeline'
       
       #- task: PublishTestResults@2
