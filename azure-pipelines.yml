@@ -88,7 +88,7 @@ jobs:
         workingDirectory: $(System.DefaultWorkingDirectory)/yaktest/
 
       - script: |
-          npx vue-cli-service test:e2e --headless --spec "tests/e2e/specs/Desktop/*"
+          npm run test:e2e -- --headless --spec "tests/e2e/specs/Desktop/*"
         #  npx cypress run --record --parallel --ci-build-id $(buildVersion) --group "Desktop" -s "cypress/integration/Desktop/*"
         #  npx cypress run --record --parallel --ci-build-id $(buildVersion) --group "Mobile" -s "cypress/integration/Mobile/*"
 
