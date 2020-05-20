@@ -1,6 +1,6 @@
 {
   "pluginsFile": "tests/e2e/plugins/index.js",
-   "testFiles": "*.feature",
+  "testFiles": "**/*.{feature,features}",
    "ignoreTestFiles": "*.js",
    "chromeWebSecurity": false,
    "integrationFolder": "tests/e2e/specs",
