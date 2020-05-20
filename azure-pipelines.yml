@@ -56,10 +56,9 @@ jobs:
       - task: Cache@2
         inputs:
           key: 'npm | "$(Agent.OS)" | package-lock.json'
-          path: '$(npm_config_cache)/yaktest/'
+          path: '$(System.DefaultWorkingDirectory)/yaktest'
           restoreKeys: 'npm | "$(Agent.OS)"'
         displayName: Cache npm
-
 
       - task: Cache@2
         inputs:
