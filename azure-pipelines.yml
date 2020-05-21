@@ -148,6 +148,9 @@ jobs:
         inputs:
           rootFolderOrFile: '$(System.DefaultWorkingDirectory)/yaktest/dist'
           includeRootFolder: true
+          archiveType: 'zip'
+          archiveFile: '$(buildVersion).zip'
+          replaceExistingArchive: true
         condition: and(failed(), eq(variables['STAGE'], 'Dev'))
 
       # - task: ArchiveFiles@2
