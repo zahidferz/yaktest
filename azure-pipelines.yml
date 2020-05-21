@@ -148,6 +148,7 @@ jobs:
         inputs:
           rootFolderOrFile: '$(System.DefaultWorkingDirectory)/yaktest/dist'
           includeRootFolder: true
+        condition: and(failed(), eq(variables['STAGE'], 'Dev'))
 
       # - task: ArchiveFiles@2
       # inputs:
@@ -155,6 +156,7 @@ jobs:
       # includeRootFolder: true
 
       - task: PublishBuildArtifacts@1
+        condition: and(failed(), eq(variables['STAGE'], 'Dev'))
 
         
 
