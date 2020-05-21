@@ -38,7 +38,6 @@ jobs:
       - bash: echo "##vso[build.updatebuildnumber]$(buildVersion)" # Update build number in Pipeline UI
         displayName: Update build number
       
-      - checkout: yaktest
       - checkout: gx-yak-tests
 
 
