@@ -47,6 +47,7 @@ jobs:
         displayName: 'Install Node.js'
 
       - script: |
+          ls $(System.DefaultWorkingDirectory)
           sudo -- sh -c -e "echo '127.0.0.1 dev.local' >> /etc/hosts";
           cp -a $(System.DefaultWorkingDirectory)/gx-yak-tests/cypress/integration/.  $(System.DefaultWorkingDirectory)/yaktest/tests/e2e/specs
           cp -a $(System.DefaultWorkingDirectory)/gx-yak-tests/cypress/plugins/. $(System.DefaultWorkingDirectory)/yaktest/tests/e2e/plugins
