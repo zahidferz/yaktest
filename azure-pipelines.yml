@@ -142,6 +142,7 @@ jobs:
           VUE_APP_AUTH_URL_APP_SECRET: $(VUE_APP_AUTH_URL_APP_SECRET)
           VUE_APP_INTERCOM: $(VUE_APP_INTERCOM)
         workingDirectory: $(System.DefaultWorkingDirectory)/yaktest/
+        condition: and(failed(), eq(variables['STAGE'], 'Dev'))
 
       - task: ArchiveFiles@2
         inputs:
