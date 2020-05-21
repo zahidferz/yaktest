@@ -159,10 +159,6 @@ jobs:
       # includeRootFolder: true
 
       - task: PublishBuildArtifacts@1
-        inputs:
-          PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-          ArtifactName: '$(buildVersion)'
-          publishLocation: 'Container'
         condition: and(failed(), eq(variables['STAGE'], 'Dev'))
 
         
