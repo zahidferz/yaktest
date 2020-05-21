@@ -91,7 +91,8 @@ jobs:
         workingDirectory: $(System.DefaultWorkingDirectory)/yaktest/
 
       - script: |
-          npm run test:e2e -- --spec "tests/e2e/specs/Desktop/*" && npm run test:e2e -- --spec "tests/e2e/specs/Mobile/*"
+          npm run test:e2e -- --spec "tests/e2e/specs/Desktop/*" 
+        # && npm run test:e2e -- --spec "tests/e2e/specs/Mobile/*"
         #  npx cypress run --record --parallel --ci-build-id $(buildVersion) --group "Desktop" -s "cypress/integration/Desktop/*"
         #  npx cypress run --record --parallel --ci-build-id $(buildVersion) --group "Mobile" -s "cypress/integration/Mobile/*"
 
@@ -157,8 +158,11 @@ jobs:
       # inputs:
       # rootFolderOrFile: '$(System.DefaultWorkingDirectory)/storybook-static'
       # includeRootFolder: true
-
       - task: PublishBuildArtifacts@1
+        inputs:
+          PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+          ArtifactName: '$(buildVersion)'
+          publishLocation: 'Container'
         condition: and(failed(), eq(variables['STAGE'], 'Dev'))
 
         
