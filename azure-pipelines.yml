@@ -37,9 +37,6 @@ jobs:
     steps:
       - bash: echo "##vso[build.updatebuildnumber]$(buildVersion)" # Update build number in Pipeline UI
         displayName: Update build number
-      
-      - checkout: gx-yak-tests
-
 
 
       - task: NodeTool@0
