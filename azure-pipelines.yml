@@ -155,7 +155,7 @@ jobs:
       # rootFolderOrFile: '$(System.DefaultWorkingDirectory)/storybook-static'
       # includeRootFolder: true
 
-      - task: PublishBuildArtifacts@1
+      - task: PublishPipelineArtifact@1
         condition: and(failed(), eq(variables['STAGE'], 'Dev'))
 
         
