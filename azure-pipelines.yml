@@ -87,8 +87,8 @@ jobs:
           CYPRESS_HOST: $(CYPRESS_HOST)
         workingDirectory: $(System.DefaultWorkingDirectory)/yaktest/
       - script: |
-          npm run test:e2e -- --spec "tests/e2e/specs/Desktop/*" 
-        #  && npm run test:e2e -- --spec "tests/e2e/specs/Mobile/*"
+          npm run test:e2e -- --spec "tests/e2e/specs/Desktop/*" \
+          && npm run test:e2e -- --spec "tests/e2e/specs/Mobile/*"
         #  npx cypress run --record --parallel --ci-build-id $(buildVersion) --group "Desktop" -s "cypress/integration/Desktop/*"
         #  npx cypress run --record --parallel --ci-build-id $(buildVersion) --group "Mobile" -s "cypress/integration/Mobile/*"
         displayName: 'Run tests e2e'
@@ -152,6 +152,6 @@ jobs:
       - task: PublishBuildArtifacts@1
         inputs:
           PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-          ArtifactName: '$(buildVersion)'
+          ArtifactName: '1.0.1'
           publishLocation: 'Container'
         condition: and(failed(), eq(variables['STAGE'], 'Dev'))
