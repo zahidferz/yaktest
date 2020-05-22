@@ -122,7 +122,7 @@ jobs:
         displayName: Publish test results (Cypress)
         inputs:
           testResultsFormat: 'JUnit'
-          testResultsFiles: '/results/Test_Results.xml'
+          testResultsFiles: '$(System.DefaultWorkingDirectory)/yaktest/results/Test_Results.xml'
           searchFolder: '$(System.DefaultWorkingDirectory)/yaktest'
           testRunTitle: 'E2E-Results'
 
