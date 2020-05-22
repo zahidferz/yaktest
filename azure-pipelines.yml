@@ -90,7 +90,8 @@ jobs:
         
 
       - script: |
-          npm run test:e2e -- --spec "tests/e2e/specs/Desktop/*" && npm run test:e2e -- --spec "tests/e2e/specs/Mobile/*" 
+          npm run test:e2e -- --spec "tests/e2e/specs/Desktop/*" --reporter-options mochaFile=results/Desktop_Results.xml
+          npm run test:e2e -- --spec "tests/e2e/specs/Mobile/*" --reporter-options mochaFile=results/Mobile_Results.xml
         #  npx cypress run --record --parallel --ci-build-id $(buildVersion) --group "Desktop" -s "cypress/integration/Desktop/*"
         #  npx cypress run --record --parallel --ci-build-id $(buildVersion) --group "Mobile" -s "cypress/integration/Mobile/*"
         displayName: 'Run tests e2e'
@@ -123,7 +124,7 @@ jobs:
         displayName: Publish test results (Cypress)
         inputs:
           testResultsFormat: 'JUnit'
-          testResultsFiles: '$(System.DefaultWorkingDirectory)/yaktest/results/Test_Results.xml'
+          testResultsFiles: '$(System.DefaultWorkingDirectory)/yaktest/results/*.xml'
           searchFolder: '$(System.DefaultWorkingDirectory)/yaktest'
           testRunTitle: 'E2E-Results'
 
