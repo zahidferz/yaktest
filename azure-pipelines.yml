@@ -90,8 +90,7 @@ jobs:
         
 
       - script: |
-          npm run test:e2e -- --spec "tests/e2e/specs/Desktop/*" \
-          && npm run test:e2e -- --spec "tests/e2e/specs/Mobile/*" 
+          npm run test:e2e -- --spec "tests/e2e/specs/Desktop/*" && npm run test:e2e -- --spec "tests/e2e/specs/Mobile/*" 
         #  npx cypress run --record --parallel --ci-build-id $(buildVersion) --group "Desktop" -s "cypress/integration/Desktop/*"
         #  npx cypress run --record --parallel --ci-build-id $(buildVersion) --group "Mobile" -s "cypress/integration/Mobile/*"
         displayName: 'Run tests e2e'
