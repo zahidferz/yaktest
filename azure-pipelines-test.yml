@@ -58,6 +58,7 @@ jobs:
           cp -a $(System.DefaultWorkingDirectory)/gx-yak-tests/cypress/support/. $(System.DefaultWorkingDirectory)/yaktest/tests/e2e/support
           cp -a $(System.DefaultWorkingDirectory)/gx-yak-tests/cypress.env.json $(System.DefaultWorkingDirectory)/yaktest/
         displayName: 'Setting up Cypress'
+
       - task: Cache@2
         inputs:
           key: 'npm | $(Agent.OS) | $(System.DefaultWorkingDirectory)/yaktest/package-lock.json'
@@ -88,15 +89,14 @@ jobs:
           VUE_APP_AUTH_URL_CLIENT_ID: $(VUE_APP_AUTH_URL_CLIENT_ID)
           VUE_APP_AUTH_URL_APP_SECRET: $(VUE_APP_AUTH_URL_APP_SECRET)
           VUE_APP_INTERCOM: $(VUE_APP_INTERCOM)
-          CYPRESS_HOST: $(CYPRESS_HOST)
         workingDirectory: $(System.DefaultWorkingDirectory)/yaktest/
         
 
       - script: |
-          npm run test:e2e -- --spec "tests/e2e/specs/Desktop/*" --reporter-options mochaFile=results/Desktop_Results.xml
+          npm run test:e2e -- --spec "tests/e2e/specs/Desktop/*" --reporter-options mochaFile=results/Desktop_Results.xml 
           npm run test:e2e -- --spec "tests/e2e/specs/Mobile/*" --reporter-options mochaFile=results/Mobile_Results.xml
-        #  npx cypress run --record --parallel --ci-build-id $(buildVersion) --group "Desktop" -s "cypress/integration/Desktop/*"
-        #  npx cypress run --record --parallel --ci-build-id $(buildVersion) --group "Mobile" -s "cypress/integration/Mobile/*"
+        #  npm run test:e2e -- --spec "tests/e2e/specs/Desktop/*" --reporter-options mochaFile=results/Desktop_Results.xml --record --parallel --ci-build-id $(buildVersion) --group "Desktop" --tag $(STAGE)
+        #  npm run test:e2e -- --spec "tests/e2e/specs/Mobile/*" --reporter-options mochaFile=results/Mobile_Results.xml --record --parallel --ci-build-id $(buildVersion) --group "Mobile --tag $(STAGE)
         displayName: 'Run tests e2e'
         env:
           VUE_APP_ACC_PROV_URL_CLIENT_ID: $(VUE_APP_ACC_PROV_URL_CLIENT_ID)
@@ -105,6 +105,7 @@ jobs:
           VUE_APP_AUTH_URL_APP_ID: $(VUE_APP_AUTH_URL_APP_ID)
           VUE_APP_AUTH_URL_CLIENT_ID: $(VUE_APP_AUTH_URL_CLIENT_ID)
           VUE_APP_AUTH_URL_APP_SECRET: $(VUE_APP_AUTH_URL_APP_SECRET)
+          VUE_APP_INTERCOM: $(VUE_APP_INTERCOM)
         timeoutInMinutes: 15
         workingDirectory: $(System.DefaultWorkingDirectory)/yaktest/
         continueOnError: true
@@ -151,7 +152,7 @@ jobs:
           rootFolderOrFile: '$(System.DefaultWorkingDirectory)/yaktest/dist'
           includeRootFolder: true
           archiveType: 'zip'
-          archiveFile: '$(Build.ArtifactStagingDirectory)/$(buildVersion).zip'
+          archiveFile: '$(Build.ArtifactStagingDirectory)/$(STAGE)-$(buildVersion).zip'
           replaceExistingArchive: true
 
       # - task: ArchiveFiles@2
@@ -162,5 +163,5 @@ jobs:
       - task: PublishBuildArtifacts@1
         inputs:
           PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-          ArtifactName: '$(buildVersion)'
+          ArtifactName: '$(STAGE)-$(buildVersion)'
           publishLocation: 'Container'
