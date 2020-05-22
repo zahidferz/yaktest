@@ -35,7 +35,8 @@ jobs:
     dependsOn: GetVersion
     variables:
       appVersion: $[ dependencies.GetVersion.outputs['App.version'] ]
-      buildVersion: '$(appVersion)'
+      buildIncrement: $[counter(variables['appVersion'], 0)] # create a counter that is used to increment build run for same app version
+      buildVersion: '$(appVersion)-r$(buildIncrement)'
     steps:
       - bash: echo "##vso[build.updatebuildnumber]$(buildVersion)" # Update build number in Pipeline UI
         displayName: Update build number
