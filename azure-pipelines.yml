@@ -73,6 +73,7 @@ jobs:
           npm ci
         displayName: 'Install dependencies'
         workingDirectory: $(System.DefaultWorkingDirectory)/yaktest/
+
       - script: |
           npm run test:unit
         displayName: 'Run tests unit'
@@ -86,6 +87,7 @@ jobs:
           VUE_APP_INTERCOM: $(VUE_APP_INTERCOM)
           CYPRESS_HOST: $(CYPRESS_HOST)
         workingDirectory: $(System.DefaultWorkingDirectory)/yaktest/
+
       - script: |
           npm run test:e2e -- --spec "tests/e2e/specs/Desktop/*" \
           && npm run test:e2e -- --spec "tests/e2e/specs/Mobile/*" 2>/dev/null || exit 0
@@ -101,9 +103,9 @@ jobs:
           VUE_APP_AUTH_URL_APP_SECRET: $(VUE_APP_AUTH_URL_APP_SECRET)
         timeoutInMinutes: 15
         workingDirectory: $(System.DefaultWorkingDirectory)/yaktest/
+
       - task: PublishPipelineArtifact@0
         displayName: 'Publish Screenshots (Cypress)'
-        condition: failed()
         inputs:
           artifactName: 'screenshots'
           targetPath: '$(Build.SourcesDirectory)/yaktest/tests/e2e/screenshots'
@@ -111,7 +113,6 @@ jobs:
       
       - task: PublishPipelineArtifact@0
         displayName: 'Publish Videos (Cypress)'
-        condition: failed()
         inputs:
           artifactName: 'videos'
           targetPath: '$(Build.SourcesDirectory)/yaktest/tests/e2e/videos'
@@ -119,10 +120,11 @@ jobs:
       
       - task: PublishTestResults@2
         displayName: Publish test results (Cypress)
-        condition: succeededOrFailed()
         inputs:
-          testRunner: JUnit
-          testResultsFiles: '$(Build.SourcesDirectory)/tests/cypress-junit-report.*.xml'
+          testResultsFormat: 'JUnit'
+          testResultsFiles: '$(Build.SourcesDirectory)/yaktest/tests/Test_Results.xml'
+          searchFolder: '$(System.DefaultWorkingDirectory)/yaktest'
+          testRunTitle: 'E2E-Results'
 
       - script: |
           npm run build $(BUILD_MODE)
@@ -137,12 +139,14 @@ jobs:
           VUE_APP_AUTH_URL_APP_SECRET: $(VUE_APP_AUTH_URL_APP_SECRET)
           VUE_APP_INTERCOM: $(VUE_APP_INTERCOM)
         workingDirectory: $(System.DefaultWorkingDirectory)/yaktest/
-        condition: and(failed(), eq(variables['STAGE'], 'Dev'))
+
       - task: ArchiveFiles@2
         inputs:
           rootFolderOrFile: '$(System.DefaultWorkingDirectory)/yaktest/dist'
           includeRootFolder: true
-        condition: and(failed(), eq(variables['STAGE'], 'Dev'))
+          archiveType: 'zip'
+          archiveFile: '$(Build.ArtifactStagingDirectory)/$(buildVersion).zip'
+          replaceExistingArchive: true
 
       # - task: ArchiveFiles@2
       # inputs:
@@ -152,6 +156,5 @@ jobs:
       - task: PublishBuildArtifacts@1
         inputs:
           PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-          ArtifactName: '1.0.1'
+          ArtifactName: '$(buildVersion)'
           publishLocation: 'Container'
-        condition: and(failed(), eq(variables['STAGE'], 'Dev'))
