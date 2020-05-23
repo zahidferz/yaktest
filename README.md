@@ -74,3 +74,5 @@ Finally, it's not an either-or situation. This boilerplate demonstrates many use
 **Can you build a Nuxt version of this boilerplate?**
 
 I might! I'll be focusing on this Vue CLI version for now, but once I've made most of the improvements on my roadmap and as time allows, I _would_ like to start work on a Nuxt version. The Nuxt team has even generously offered to help!
+
+.
