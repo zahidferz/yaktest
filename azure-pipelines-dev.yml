@@ -83,13 +83,13 @@ jobs:
 
     steps:
       - script: |
-          cd Build.ArtifactStagingDirectory 
+          cd $(Build.ArtifactStagingDirectory)
           ls
           echo "-----------"
-          cd Build.SourcesDirectory
+          cd $(Build.SourcesDirectory)
           ls
           echo "-----------"
-          cd Build.BinariesDirectory
+          cd $(Build.BinariesDirectory)
           ls
         displayName: "Echo Directory"
 
