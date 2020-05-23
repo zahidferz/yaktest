@@ -6,10 +6,10 @@
 # Note that the trigger is ignored and overriden by Azure Pipelines options
 resources:
   repositories:
-  - repository: gx-yak-front-app # The name used to reference this repository in the checkout step
+  - repository: yaktest # The name used to reference this repository in the checkout step
     type: github
-    endpoint: gx-github
-    name: gestionix/gx-yak-front-app
+    endpoint: za
+    name: zahid/yaktest
     ref: $(Build.SourceBranchName)
 
   - repository: gx-yak-tests # The name used to reference this repository in the checkout step
@@ -47,7 +47,7 @@ jobs:
         displayName: Update build number
 
       - checkout: gx-yak-tests
-      - checkout: gx-yak-front-app
+      - checkout: yaktest
 
       - task: NodeTool@0
         inputs:
@@ -56,31 +56,31 @@ jobs:
 
       - script: |
           sudo -- sh -c -e "echo '127.0.0.1 dev.local' >> /etc/hosts";
-          cp -a $(System.DefaultWorkingDirectory)/gx-yak-tests/cypress/integration/.  $(System.DefaultWorkingDirectory)/gx-yak-front-app/tests/e2e/specs
-          cp -a $(System.DefaultWorkingDirectory)/gx-yak-tests/cypress/plugins/. $(System.DefaultWorkingDirectory)/gx-yak-front-app/tests/e2e/plugins
-          cp -a $(System.DefaultWorkingDirectory)/gx-yak-tests/cypress/fixtures/. $(System.DefaultWorkingDirectory)/gx-yak-front-app/tests/e2e/fixtures
-          cp -a $(System.DefaultWorkingDirectory)/gx-yak-tests/cypress/support/. $(System.DefaultWorkingDirectory)/gx-yak-front-app/tests/e2e/support
-          cp -a $(System.DefaultWorkingDirectory)/gx-yak-tests/cypress.env.json $(System.DefaultWorkingDirectory)/gx-yak-front-app/
+          cp -a $(System.DefaultWorkingDirectory)/gx-yak-tests/cypress/integration/.  $(System.DefaultWorkingDirectory)/yaktest/tests/e2e/specs
+          cp -a $(System.DefaultWorkingDirectory)/gx-yak-tests/cypress/plugins/. $(System.DefaultWorkingDirectory)/yaktest/tests/e2e/plugins
+          cp -a $(System.DefaultWorkingDirectory)/gx-yak-tests/cypress/fixtures/. $(System.DefaultWorkingDirectory)/yaktest/tests/e2e/fixtures
+          cp -a $(System.DefaultWorkingDirectory)/gx-yak-tests/cypress/support/. $(System.DefaultWorkingDirectory)/yaktest/tests/e2e/support
+          cp -a $(System.DefaultWorkingDirectory)/gx-yak-tests/cypress.env.json $(System.DefaultWorkingDirectory)/yaktest/
         displayName: 'Setting up Cypress'
 
       - task: Cache@2
         inputs:
-          key: 'npm | $(Agent.OS) | $(System.DefaultWorkingDirectory)/gx-yak-front-app/package-lock.json'
+          key: 'npm | $(Agent.OS) | $(System.DefaultWorkingDirectory)/yaktest/package-lock.json'
           path: '/home/vsts/.npm'
-          restoreKeys: 'npm | $(Agent.OS) | $(System.DefaultWorkingDirectory)/gx-yak-front-app/package-lock.json'
+          restoreKeys: 'npm | $(Agent.OS) | $(System.DefaultWorkingDirectory)/yaktest/package-lock.json'
         displayName: Cache npm
 
       - task: Cache@2
         inputs:
-          key: 'cypress | $(Agent.OS) | $(System.DefaultWorkingDirectory)/gx-yak-front-app/package-lock.json'
+          key: 'cypress | $(Agent.OS) | $(System.DefaultWorkingDirectory)/yaktest/package-lock.json'
           path: /home/vsts/.cache/Cypress
-          restoreKeys: 'cypress | $(Agent.OS) | $(System.DefaultWorkingDirectory)/gx-yak-front-app/package-lock.json'
+          restoreKeys: 'cypress | $(Agent.OS) | $(System.DefaultWorkingDirectory)/yaktest/package-lock.json'
         displayName: Cache Cypress binary
 
       - script: |
           npm ci
         displayName: 'Install dependencies'
-        workingDirectory: $(System.DefaultWorkingDirectory)/gx-yak-front-app/
+        workingDirectory: $(System.DefaultWorkingDirectory)/yaktest/
 
       - script: |
           npm run test:unit
@@ -94,12 +94,12 @@ jobs:
           VUE_APP_AUTH_URL_APP_SECRET: $(VUE_APP_AUTH_URL_APP_SECRET)
           VUE_APP_INTERCOM: $(VUE_APP_INTERCOM)
           CYPRESS_HOST: $(CYPRESS_HOST)
-        workingDirectory: $(System.DefaultWorkingDirectory)/gx-yak-front-app/
+        workingDirectory: $(System.DefaultWorkingDirectory)/yaktest/
 
       - task: Bash@3
         inputs:
-          filePath: '$(System.DefaultWorkingDirectory)/gx-yak-front-app/ciserver.sh'
-          workingDirectory: '$(System.DefaultWorkingDirectory)/gx-yak-front-app/'
+          filePath: '$(System.DefaultWorkingDirectory)/yaktest/ciserver.sh'
+          workingDirectory: '$(System.DefaultWorkingDirectory)/yaktest/'
         displayName: 'Start CI Server'
 
       - script: |
@@ -114,14 +114,14 @@ jobs:
           VUE_APP_AUTH_URL_APP_SECRET: $(VUE_APP_AUTH_URL_APP_SECRET)
           VUE_APP_INTERCOM: $(VUE_APP_INTERCOM)
         timeoutInMinutes: 15
-        workingDirectory: $(System.DefaultWorkingDirectory)/gx-yak-front-app/
+        workingDirectory: $(System.DefaultWorkingDirectory)/yaktest/
         continueOnError: true
 
       - task: PublishPipelineArtifact@0
         displayName: 'Publish Screenshots (Cypress)'
         inputs:
           artifactName: 'screenshots'
-          targetPath: '$(Build.SourcesDirectory)/gx-yak-front-app/tests/e2e/screenshots'
+          targetPath: '$(Build.SourcesDirectory)/yaktest/tests/e2e/screenshots'
           publishLocation: 'pipeline'
         condition: failed()
 
@@ -129,7 +129,7 @@ jobs:
         displayName: 'Publish Videos (Cypress)'
         inputs:
           artifactName: 'videos'
-          targetPath: '$(Build.SourcesDirectory)/gx-yak-front-app/tests/e2e/videos'
+          targetPath: '$(Build.SourcesDirectory)/yaktest/tests/e2e/videos'
           publishLocation: 'pipeline'
         condition: failed()
 
@@ -137,8 +137,8 @@ jobs:
         displayName: Publish test results (Cypress)
         inputs:
           testResultsFormat: 'JUnit'
-          testResultsFiles: '$(System.DefaultWorkingDirectory)/gx-yak-front-app/results/*.xml'
-          searchFolder: '$(System.DefaultWorkingDirectory)/gx-yak-front-app'
+          testResultsFiles: '$(System.DefaultWorkingDirectory)/yaktest/results/*.xml'
+          searchFolder: '$(System.DefaultWorkingDirectory)/yaktest'
           failTaskOnFailedTests: true
           testRunTitle: 'E2E-Results'
         condition: succeededOrFailed()
@@ -155,11 +155,11 @@ jobs:
           VUE_APP_AUTH_URL_CLIENT_ID: $(VUE_APP_AUTH_URL_CLIENT_ID)
           VUE_APP_AUTH_URL_APP_SECRET: $(VUE_APP_AUTH_URL_APP_SECRET)
           VUE_APP_INTERCOM: $(VUE_APP_INTERCOM)
-        workingDirectory: $(System.DefaultWorkingDirectory)/gx-yak-front-app/
+        workingDirectory: $(System.DefaultWorkingDirectory)/yaktest/
 
       - task: ArchiveFiles@2
         inputs:
-          rootFolderOrFile: '$(System.DefaultWorkingDirectory)/gx-yak-front-app/dist'
+          rootFolderOrFile: '$(System.DefaultWorkingDirectory)/yaktest/dist'
           includeRootFolder: true
           archiveType: 'zip'
           archiveFile: '$(Build.ArtifactStagingDirectory)/$(STAGE)-$(buildVersion).zip'
