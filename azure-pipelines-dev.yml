@@ -4,6 +4,18 @@
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 # Note that the trigger is ignored and overriden by Azure Pipelines options
+resources:
+  repositories:
+  - repository: yaktest # The name used to reference this repository in the checkout step
+    type: github
+    endpoint: za
+    name: zahid/yaktest
+    ref: $(SourceBranchName)
+
+  - repository: gx-yak-tests # The name used to reference this repository in the checkout step
+    type: github
+    endpoint: gx-github
+    name: gestionix/gx-yak-tests
 
 name: $(SourceBranchName)
 pool:
