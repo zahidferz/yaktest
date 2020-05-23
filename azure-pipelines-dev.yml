@@ -65,10 +65,9 @@ jobs:
     displayName: Test 
     dependsOn: Build
     steps:
-      - script: |
-          echo $buildVersion
-          echo "3----end-----3"
+      - bash: echo This is the build version $BUILD_VERSION and this is the $BUILD number
         env:
-          buildVersion: $($buildVersion)
+          BUILD_VERSION: $(buildVersion)
+          BUILD: $(Build.BuildNumber)	
 
 
