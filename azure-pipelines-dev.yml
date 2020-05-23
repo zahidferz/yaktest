@@ -61,7 +61,8 @@ jobs:
           cp -a $(System.DefaultWorkingDirectory)/gx-yak-tests/cypress.env.json $(System.DefaultWorkingDirectory)/yaktest/
         displayName: 'Setting up Cypress'
 
-    - job: Test 
+    - job: Test
+      displayName: Build 
       dependsOn: Build
       steps:
         - script: |
