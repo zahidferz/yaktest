@@ -9,7 +9,7 @@ resources:
   - repository: yaktest # The name used to reference this repository in the checkout step
     type: github
     endpoint: za
-    name: zahid/yaktest
+    name: zahidferz/yaktest
     ref: $(Build.SourceBranchName)
 
   - repository: gx-yak-tests # The name used to reference this repository in the checkout step
@@ -45,7 +45,7 @@ jobs:
     steps:
       - bash: echo "##vso[build.updatebuildnumber]$(buildVersion)" # Update build number in Pipeline UI
         displayName: Update build number
-
+    
       - checkout: gx-yak-tests
       - checkout: yaktest
 
