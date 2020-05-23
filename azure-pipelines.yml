@@ -10,7 +10,6 @@ resources:
     type: github
     endpoint: za
     name: zahid/yaktest
-    ref: develop
 
   - repository: gx-yak-tests # The name used to reference this repository in the checkout step
     type: github
