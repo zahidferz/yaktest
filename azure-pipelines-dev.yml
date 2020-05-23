@@ -71,47 +71,59 @@ jobs:
       - script: |
           npm ci
         displayName: 'Install dependencies'
-        workingDirectory: $(System.DefaultWorkingDirectory)/yaktest/       
+        workingDirectory: $(System.DefaultWorkingDirectory)/yaktest/        
 
   - job: Test
     strategy:
       parallel: 3
     displayName: Test 
     dependsOn: Setup
+    variables:
+      IPServer: $[ dependencies.Setup.Outputs['CIServer.IPVar'] ]
+
     steps:
-
-      - task: Bash@3
-        inputs:
-          filePath: '$(System.DefaultWorkingDirectory)/ciserver.sh'
-          workingDirectory: '$(System.DefaultWorkingDirectory)'
-        displayName: 'Start CI Server'      
-
       - script: |
-          npm run test:unit
-        displayName: 'Run tests unit'
-        env:
-          VUE_APP_ACC_PROV_URL_CLIENT_ID: $(VUE_APP_ACC_PROV_URL_CLIENT_ID)
-          VUE_APP_ACC_PROV_URL_CLIENT_SECRET: $(VUE_APP_ACC_PROV_URL_CLIENT_SECRET)
-          VUE_APP_AUTH0_CLIENT_ID: $(VUE_APP_AUTH0_CLIENT_ID)
-          VUE_APP_AUTH_URL_APP_ID: $(VUE_APP_AUTH_URL_APP_ID)
-          VUE_APP_AUTH_URL_CLIENT_ID: $(VUE_APP_AUTH_URL_CLIENT_ID)
-          VUE_APP_AUTH_URL_APP_SECRET: $(VUE_APP_AUTH_URL_APP_SECRET)
-          VUE_APP_INTERCOM: $(VUE_APP_INTERCOM)
-        workingDirectory: '$(System.DefaultWorkingDirectory)'
+          cd Build.ArtifactStagingDirectory 
+          ls
+          echo "-----------"
+          cd Build.SourcesDirectory
+          ls
+          echo "-----------"
+          cd Build.BinariesDirectory
+          ls
+        displayName: "Echo Directory"
 
-      - script: |
-          npx cypress run --spec "tests/e2e/specs/Desktop/*" --reporter-options mochaFile=results/Desktop_Results.xml --record --parallel --ci-build-id $(buildVersion) --group "Desktop" --tag $(STAGE)
-          npx cypress run --spec "tests/e2e/specs/Mobile/*" --reporter-options mochaFile=results/Mobile_Results.xml --record --parallel --ci-build-id $(buildVersion) --group "Mobile" --tag $(STAGE)
-        displayName: 'Run tests e2e'
-        env:
-          VUE_APP_ACC_PROV_URL_CLIENT_ID: $(VUE_APP_ACC_PROV_URL_CLIENT_ID)
-          VUE_APP_ACC_PROV_URL_CLIENT_SECRET: $(VUE_APP_ACC_PROV_URL_CLIENT_SECRET)
-          VUE_APP_AUTH0_CLIENT_ID: $(VUE_APP_AUTH0_CLIENT_ID)
-          VUE_APP_AUTH_URL_APP_ID: $(VUE_APP_AUTH_URL_APP_ID)
-          VUE_APP_AUTH_URL_CLIENT_ID: $(VUE_APP_AUTH_URL_CLIENT_ID)
-          VUE_APP_AUTH_URL_APP_SECRET: $(VUE_APP_AUTH_URL_APP_SECRET)
-          VUE_APP_INTERCOM: $(VUE_APP_INTERCOM)
-          CYPRESS_HOST: $(CYPRESS_HOST)
-        timeoutInMinutes: 15
-        workingDirectory: '$(System.DefaultWorkingDirectory)'
-        continueOnError: true
+          
+    
+
+#      - script: |
+#          npm run test:unit
+#        displayName: 'Run tests unit'
+#        env:
+#          VUE_APP_ACC_PROV_URL_CLIENT_ID: $(VUE_APP_ACC_PROV_URL_CLIENT_ID)
+#          VUE_APP_ACC_PROV_URL_CLIENT_SECRET: $(VUE_APP_ACC_PROV_URL_CLIENT_SECRET)
+#          VUE_APP_AUTH0_CLIENT_ID: $(VUE_APP_AUTH0_CLIENT_ID)
+#          VUE_APP_AUTH_URL_APP_ID: $(VUE_APP_AUTH_URL_APP_ID)
+#          VUE_APP_AUTH_URL_CLIENT_ID: $(VUE_APP_AUTH_URL_CLIENT_ID)
+#          VUE_APP_AUTH_URL_APP_SECRET: $(VUE_APP_AUTH_URL_APP_SECRET)
+#          VUE_APP_INTERCOM: $(VUE_APP_INTERCOM)
+#        workingDirectory: $(System.DefaultWorkingDirectory)/yaktest/
+#
+#      - script: |
+#          npx cypress run --spec "tests/e2e/specs/Desktop/*" --reporter-options mochaFile=results/Desktop_Results.xml --record --parallel --ci-build-id $(buildVersion) --group "Desktop" --tag $(STAGE)
+#          npx cypress run --spec "tests/e2e/specs/Mobile/*" --reporter-options mochaFile=results/Mobile_Results.xml --record --parallel --ci-build-id $(buildVersion) --group "Mobile" --tag $(STAGE)
+#        displayName: 'Run tests e2e'
+#        env:
+#          VUE_APP_ACC_PROV_URL_CLIENT_ID: $(VUE_APP_ACC_PROV_URL_CLIENT_ID)
+#          VUE_APP_ACC_PROV_URL_CLIENT_SECRET: $(VUE_APP_ACC_PROV_URL_CLIENT_SECRET)
+#          VUE_APP_AUTH0_CLIENT_ID: $(VUE_APP_AUTH0_CLIENT_ID)
+#          VUE_APP_AUTH_URL_APP_ID: $(VUE_APP_AUTH_URL_APP_ID)
+#          VUE_APP_AUTH_URL_CLIENT_ID: $(VUE_APP_AUTH_URL_CLIENT_ID)
+#          VUE_APP_AUTH_URL_APP_SECRET: $(VUE_APP_AUTH_URL_APP_SECRET)
+#          VUE_APP_INTERCOM: $(VUE_APP_INTERCOM)
+#          CYPRESS_HOST: $(CYPRESS_HOST)
+#        timeoutInMinutes: 15
+#        workingDirectory: $(System.DefaultWorkingDirectory)/yaktest/
+#        continueOnError: true
+
+
