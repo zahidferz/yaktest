@@ -78,8 +78,6 @@ jobs:
       parallel: 3
     displayName: Test 
     dependsOn: Setup
-    variables:
-      IPServer: $[ dependencies.Setup.Outputs['CIServer.IPVar'] ]
 
       - task: Bash@3
         inputs:
