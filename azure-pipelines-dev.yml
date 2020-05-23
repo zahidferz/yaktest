@@ -67,5 +67,8 @@ jobs:
     steps:
       - script: |
           echo $buildVersion
+          echo "3----end-----3"
+      env:
+        buildVersion: $($buildVersion)
 
 
