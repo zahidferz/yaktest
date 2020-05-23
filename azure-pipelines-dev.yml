@@ -32,8 +32,8 @@ jobs:
           echo "##vso[task.setvariable variable=version;isOutput=true]$VERSIONT"
         name: App
 
-  - job: Build
-    displayName: Build
+  - job: Setup
+    displayName: Setup
     dependsOn: GetVersion
     variables:
       appVersion: $[ dependencies.GetVersion.outputs['App.version'] ]
@@ -61,13 +61,78 @@ jobs:
           cp -a $(System.DefaultWorkingDirectory)/gx-yak-tests/cypress.env.json $(System.DefaultWorkingDirectory)/yaktest/
         displayName: 'Setting up Cypress'
 
+      - task: Cache@2
+        inputs:
+          key: 'npm | $(Agent.OS) | $(System.DefaultWorkingDirectory)/yaktest/package-lock.json'
+          path: '/home/vsts/.npm'
+          restoreKeys: 'npm | $(Agent.OS) | $(System.DefaultWorkingDirectory)/yaktest/package-lock.json'
+        displayName: Cache npm
+
+      - task: Cache@2
+        inputs:
+          key: 'cypress | $(Agent.OS) | $(System.DefaultWorkingDirectory)/yaktest/package-lock.json'
+          path: /home/vsts/.cache/Cypress
+          restoreKeys: 'cypress | $(Agent.OS) | $(System.DefaultWorkingDirectory)/yaktest/package-lock.json'
+        displayName: Cache Cypress binary
+
+      - script: |
+          npm ci
+        displayName: 'Install dependencies'
+        workingDirectory: $(System.DefaultWorkingDirectory)/yaktest/
+      
+      - task: Bash@3
+        inputs:
+          filePath: '$(System.DefaultWorkingDirectory)/yaktest/ciserver.sh'
+          workingDirectory: '$(System.DefaultWorkingDirectory)/yaktest/'
+        displayName: 'Start CI Server'
+        name: CIServer
+      - script: echo $(CIServer.IPVar)
+        displayName: "Echo CI Sever"
+        
+
   - job: Test
+    strategy:
+      parallel: 3
     displayName: Test 
-    dependsOn: Build
+    dependsOn: Setup
+    variables:
+      IPServer: $[ dependencies.Setup.Outputs['CIServer.IPVar'] ]
+
     steps:
-      - bash: echo This is the build version $BUILD_VERSION and this is the $BUILD number
-        env:
-          BUILD_VERSION: $(buildVersion)
-          BUILD: $(Build.BuildNumber)	
+      - script: echo $(IPServer)
+        displayName: "Echo CI Sever on Test"
+
+          
+    
+
+#      - script: |
+#          npm run test:unit
+#        displayName: 'Run tests unit'
+#        env:
+#          VUE_APP_ACC_PROV_URL_CLIENT_ID: $(VUE_APP_ACC_PROV_URL_CLIENT_ID)
+#          VUE_APP_ACC_PROV_URL_CLIENT_SECRET: $(VUE_APP_ACC_PROV_URL_CLIENT_SECRET)
+#          VUE_APP_AUTH0_CLIENT_ID: $(VUE_APP_AUTH0_CLIENT_ID)
+#          VUE_APP_AUTH_URL_APP_ID: $(VUE_APP_AUTH_URL_APP_ID)
+#          VUE_APP_AUTH_URL_CLIENT_ID: $(VUE_APP_AUTH_URL_CLIENT_ID)
+#          VUE_APP_AUTH_URL_APP_SECRET: $(VUE_APP_AUTH_URL_APP_SECRET)
+#          VUE_APP_INTERCOM: $(VUE_APP_INTERCOM)
+#        workingDirectory: $(System.DefaultWorkingDirectory)/yaktest/
+#
+#      - script: |
+#          npx cypress run --spec "tests/e2e/specs/Desktop/*" --reporter-options mochaFile=results/Desktop_Results.xml --record --parallel --ci-build-id $(buildVersion) --group "Desktop" --tag $(STAGE)
+#          npx cypress run --spec "tests/e2e/specs/Mobile/*" --reporter-options mochaFile=results/Mobile_Results.xml --record --parallel --ci-build-id $(buildVersion) --group "Mobile" --tag $(STAGE)
+#        displayName: 'Run tests e2e'
+#        env:
+#          VUE_APP_ACC_PROV_URL_CLIENT_ID: $(VUE_APP_ACC_PROV_URL_CLIENT_ID)
+#          VUE_APP_ACC_PROV_URL_CLIENT_SECRET: $(VUE_APP_ACC_PROV_URL_CLIENT_SECRET)
+#          VUE_APP_AUTH0_CLIENT_ID: $(VUE_APP_AUTH0_CLIENT_ID)
+#          VUE_APP_AUTH_URL_APP_ID: $(VUE_APP_AUTH_URL_APP_ID)
+#          VUE_APP_AUTH_URL_CLIENT_ID: $(VUE_APP_AUTH_URL_CLIENT_ID)
+#          VUE_APP_AUTH_URL_APP_SECRET: $(VUE_APP_AUTH_URL_APP_SECRET)
+#          VUE_APP_INTERCOM: $(VUE_APP_INTERCOM)
+#          CYPRESS_HOST: $(CYPRESS_HOST)
+#        timeoutInMinutes: 15
+#        workingDirectory: $(System.DefaultWorkingDirectory)/yaktest/
+#        continueOnError: true
 
 
