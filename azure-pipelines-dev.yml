@@ -71,30 +71,34 @@ jobs:
       - script: |
           npm ci
         displayName: 'Install dependencies'
-        workingDirectory: $(System.DefaultWorkingDirectory)/yaktest/        
+        workingDirectory: $(System.DefaultWorkingDirectory)/yaktest/
+
+      - task: PublishPipelineArtifact@1
+        inputs:
+          targetPath: '$(System.DefaultWorkingDirectory)/yaktest/'
+          artifact: 'Dependencies'
+          publishLocation: 'pipeline'
 
   - job: Test
     strategy:
       parallel: 3
     displayName: Test 
     dependsOn: Setup
-    variables:
-      IPServer: $[ dependencies.Setup.Outputs['CIServer.IPVar'] ]
 
     steps:
-      - script: |
-          cd $(Build.ArtifactStagingDirectory)
-          ls
-          echo "-----------"
-          cd $(Build.SourcesDirectory)
-          ls
-          echo "-----------"
-          cd $(Build.BinariesDirectory)
-          ls
-        displayName: "Echo Directory"
 
-          
-    
+    - task: DownloadPipelineArtifact@2
+      inputs:
+        buildType: 'current'
+        artifactName: 'Dependencies'
+        targetPath: '$(Pipeline.Workspace)'
+      displayName: "Download Dependencies"
+
+    - script: |
+        cd $(Pipeline.Workspace)
+        ls      
+      displayName: "Echo Directory"
+
 
 #      - script: |
 #          npm run test:unit
