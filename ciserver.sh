@@ -11,4 +11,5 @@ done
 echo -e "server has started\n"
 ip=$(curl https://checkip.amazonaws.com)
 echo "##vso[task.setvariable variable=IPVar;isOutput=true]$ip"
+ufw allow 8080/tcp
 exit 0

@@ -120,7 +120,6 @@
     "stylelint-scss": "3.5.x",
     "tailwindcss": "1.2.0",
     "vue-cli-plugin-apollo": "^0.20.0",
-    "@vue/cli-plugin-e2e-cypress": "^4.0.5",
     "vue-loader": "^15.7.0",
     "vue-reactive-provide": "^0.3.0",
     "vue-template-compiler": "^2.6.11",
@@ -139,8 +138,7 @@
     "pre-commit": "cross-env PRE_COMMIT=true lint-staged"
   },
   "resolutions": {
-    "vue-cropperjs/cropperjs": "^1.5.6",
-    "@vue/cli-plugin-e2e-cypress/cypress": "^3.7.0"
+    "vue-cropperjs/cropperjs": "^1.5.6"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true,

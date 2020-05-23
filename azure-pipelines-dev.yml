@@ -19,7 +19,7 @@ resources:
 
 name: $(SourceBranchName)
 pool:
-  vmImage: 'Ubuntu-16.04'
+  vmImage: 'Ubuntu-18.04'
 
 jobs:
 
@@ -68,13 +68,6 @@ jobs:
           restoreKeys: 'npm | $(Agent.OS) | $(System.DefaultWorkingDirectory)/yaktest/package-lock.json'
         displayName: Cache npm
 
-      - task: Cache@2
-        inputs:
-          key: 'cypress | $(Agent.OS) | $(System.DefaultWorkingDirectory)/yaktest/package-lock.json'
-          path: /home/vsts/.cache/Cypress
-          restoreKeys: 'cypress | $(Agent.OS) | $(System.DefaultWorkingDirectory)/yaktest/package-lock.json'
-        displayName: Cache Cypress binary
-
       - script: |
           npm ci
         displayName: 'Install dependencies'
@@ -99,7 +92,7 @@ jobs:
       IPServer: $[ dependencies.Setup.Outputs['CIServer.IPVar'] ]
 
     steps:
-      - script: echo $(IPServer)
+      - script: curl $(IPServer):8080
         displayName: "Echo CI Sever on Test"
 
           
