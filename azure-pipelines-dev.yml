@@ -62,10 +62,10 @@ jobs:
         displayName: 'Setting up Cypress'
 
   - job: Test
-    displayName: Build 
+    displayName: Test 
     dependsOn: Build
     steps:
       - script: |
-          echo $(buildVersion)
+          echo $buildVersion
 
 
