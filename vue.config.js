@@ -59,6 +59,6 @@ module.exports = {
           before: require('./tests/mock-api'),
         }),
     // CI env variable should be set in CD/CI pipeline to avoid issues with custom /etc/hosts
-    host: process.env.CI ? '0.0.0.0' : 'dev.local',
+    host: process.env.CI ? 'localhost' : 'dev.local',
   },
 }
