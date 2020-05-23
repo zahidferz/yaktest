@@ -1,4 +1,4 @@
-  
+
 # Node.js with Vue
 # Build a Node.js project that uses Vue.
 # Add steps that analyze code, save build artifacts, deploy, and more:
@@ -6,15 +6,16 @@
 # Note that the trigger is ignored and overriden by Azure Pipelines options
 resources:
   repositories:
-  - repository: yaktest # The name used to reference this repository in the checkout step
+  - repository: gx-yak-front-app # The name used to reference this repository in the checkout step
     type: github
-    endpoint: za
-    name: zahidferz/yaktest
-  
+    endpoint: gx-github
+    name: gestionix/gx-yak-front-app
+    ref: $(Build.SourceBranchName)
+
   - repository: gx-yak-tests # The name used to reference this repository in the checkout step
     type: github
     endpoint: gx-github
-    name: gestionix/gx-yak-tests 
+    name: gestionix/gx-yak-tests
 
 name: $(SourceBranchName)
 pool:
@@ -23,6 +24,8 @@ pool:
 jobs:
 
   - job: GetVersion
+    strategy:
+      parallel: 3
     displayName: Get Version
     steps:
       - bash: |
@@ -31,6 +34,8 @@ jobs:
         name: App
 
   - job: Build
+    strategy:
+      parallel: 3
     displayName: Build
     dependsOn: GetVersion
     variables:
@@ -42,7 +47,7 @@ jobs:
         displayName: Update build number
 
       - checkout: gx-yak-tests
-      - checkout: yaktest
+      - checkout: gx-yak-front-app
 
       - task: NodeTool@0
         inputs:
@@ -50,33 +55,32 @@ jobs:
         displayName: 'Install Node.js'
 
       - script: |
-          ls $(System.DefaultWorkingDirectory)
           sudo -- sh -c -e "echo '127.0.0.1 dev.local' >> /etc/hosts";
-          cp -a $(System.DefaultWorkingDirectory)/gx-yak-tests/cypress/integration/.  $(System.DefaultWorkingDirectory)/yaktest/tests/e2e/specs
-          cp -a $(System.DefaultWorkingDirectory)/gx-yak-tests/cypress/plugins/. $(System.DefaultWorkingDirectory)/yaktest/tests/e2e/plugins
-          cp -a $(System.DefaultWorkingDirectory)/gx-yak-tests/cypress/fixtures/. $(System.DefaultWorkingDirectory)/yaktest/tests/e2e/fixtures
-          cp -a $(System.DefaultWorkingDirectory)/gx-yak-tests/cypress/support/. $(System.DefaultWorkingDirectory)/yaktest/tests/e2e/support
-          cp -a $(System.DefaultWorkingDirectory)/gx-yak-tests/cypress.env.json $(System.DefaultWorkingDirectory)/yaktest/
+          cp -a $(System.DefaultWorkingDirectory)/gx-yak-tests/cypress/integration/.  $(System.DefaultWorkingDirectory)/gx-yak-front-app/tests/e2e/specs
+          cp -a $(System.DefaultWorkingDirectory)/gx-yak-tests/cypress/plugins/. $(System.DefaultWorkingDirectory)/gx-yak-front-app/tests/e2e/plugins
+          cp -a $(System.DefaultWorkingDirectory)/gx-yak-tests/cypress/fixtures/. $(System.DefaultWorkingDirectory)/gx-yak-front-app/tests/e2e/fixtures
+          cp -a $(System.DefaultWorkingDirectory)/gx-yak-tests/cypress/support/. $(System.DefaultWorkingDirectory)/gx-yak-front-app/tests/e2e/support
+          cp -a $(System.DefaultWorkingDirectory)/gx-yak-tests/cypress.env.json $(System.DefaultWorkingDirectory)/gx-yak-front-app/
         displayName: 'Setting up Cypress'
 
       - task: Cache@2
         inputs:
-          key: 'npm | $(Agent.OS) | $(System.DefaultWorkingDirectory)/yaktest/package-lock.json'
+          key: 'npm | $(Agent.OS) | $(System.DefaultWorkingDirectory)/gx-yak-front-app/package-lock.json'
           path: '/home/vsts/.npm'
-          restoreKeys: 'npm | $(Agent.OS) | $(System.DefaultWorkingDirectory)/yaktest/package-lock.json'
+          restoreKeys: 'npm | $(Agent.OS) | $(System.DefaultWorkingDirectory)/gx-yak-front-app/package-lock.json'
         displayName: Cache npm
 
       - task: Cache@2
         inputs:
-          key: 'cypress | $(Agent.OS) | $(System.DefaultWorkingDirectory)/yaktest/package-lock.json'
+          key: 'cypress | $(Agent.OS) | $(System.DefaultWorkingDirectory)/gx-yak-front-app/package-lock.json'
           path: /home/vsts/.cache/Cypress
-          restoreKeys: 'cypress | $(Agent.OS) | $(System.DefaultWorkingDirectory)/yaktest/package-lock.json'
+          restoreKeys: 'cypress | $(Agent.OS) | $(System.DefaultWorkingDirectory)/gx-yak-front-app/package-lock.json'
         displayName: Cache Cypress binary
 
       - script: |
           npm ci
         displayName: 'Install dependencies'
-        workingDirectory: $(System.DefaultWorkingDirectory)/yaktest/
+        workingDirectory: $(System.DefaultWorkingDirectory)/gx-yak-front-app/
 
       - script: |
           npm run test:unit
@@ -89,16 +93,19 @@ jobs:
           VUE_APP_AUTH_URL_CLIENT_ID: $(VUE_APP_AUTH_URL_CLIENT_ID)
           VUE_APP_AUTH_URL_APP_SECRET: $(VUE_APP_AUTH_URL_APP_SECRET)
           VUE_APP_INTERCOM: $(VUE_APP_INTERCOM)
-        workingDirectory: $(System.DefaultWorkingDirectory)/yaktest/
-        
+          CYPRESS_HOST: $(CYPRESS_HOST)
+        workingDirectory: $(System.DefaultWorkingDirectory)/gx-yak-front-app/
+
+      - task: Bash@3
+        inputs:
+          filePath: '$(System.DefaultWorkingDirectory)/gx-yak-front-app/ciserver.sh'
+          workingDirectory: '$(System.DefaultWorkingDirectory)/gx-yak-front-app/'
+        displayName: 'Start CI Server'
 
       - script: |
-          npm run test:e2e -- --spec "tests/e2e/specs/Desktop/*" --reporter-options mochaFile=results/Desktop_Results.xml 
-          npm run test:e2e -- --spec "tests/e2e/specs/Mobile/*" --reporter-options mochaFile=results/Mobile_Results.xml
-        #  npm run test:e2e -- --spec "tests/e2e/specs/Desktop/*" --reporter-options mochaFile=results/Desktop_Results.xml --record --parallel --ci-build-id $(buildVersion) --group "Desktop" --tag $(STAGE)
-        #  npm run test:e2e -- --spec "tests/e2e/specs/Mobile/*" --reporter-options mochaFile=results/Mobile_Results.xml --record --parallel --ci-build-id $(buildVersion) --group "Mobile --tag $(STAGE)
+          npx cypress run --spec "tests/e2e/specs/Desktop/*" --reporter-options mochaFile=results/Desktop_Results.xml --record --parallel --ci-build-id $(buildVersion) --group "Desktop" --tag $(STAGE)
+          npx cypress run --spec "tests/e2e/specs/Mobile/*" --reporter-options mochaFile=results/Mobile_Results.xml --record --parallel --ci-build-id $(buildVersion) --group "Mobile" --tag $(STAGE)
         displayName: 'Run tests e2e'
-        env:
           VUE_APP_ACC_PROV_URL_CLIENT_ID: $(VUE_APP_ACC_PROV_URL_CLIENT_ID)
           VUE_APP_ACC_PROV_URL_CLIENT_SECRET: $(VUE_APP_ACC_PROV_URL_CLIENT_SECRET)
           VUE_APP_AUTH0_CLIENT_ID: $(VUE_APP_AUTH0_CLIENT_ID)
@@ -107,31 +114,34 @@ jobs:
           VUE_APP_AUTH_URL_APP_SECRET: $(VUE_APP_AUTH_URL_APP_SECRET)
           VUE_APP_INTERCOM: $(VUE_APP_INTERCOM)
         timeoutInMinutes: 15
-        workingDirectory: $(System.DefaultWorkingDirectory)/yaktest/
+        workingDirectory: $(System.DefaultWorkingDirectory)/gx-yak-front-app/
         continueOnError: true
 
       - task: PublishPipelineArtifact@0
         displayName: 'Publish Screenshots (Cypress)'
         inputs:
           artifactName: 'screenshots'
-          targetPath: '$(Build.SourcesDirectory)/yaktest/tests/e2e/screenshots'
+          targetPath: '$(Build.SourcesDirectory)/gx-yak-front-app/tests/e2e/screenshots'
           publishLocation: 'pipeline'
-      
+        condition: failed()
+
       - task: PublishPipelineArtifact@0
         displayName: 'Publish Videos (Cypress)'
         inputs:
           artifactName: 'videos'
-          targetPath: '$(Build.SourcesDirectory)/yaktest/tests/e2e/videos'
+          targetPath: '$(Build.SourcesDirectory)/gx-yak-front-app/tests/e2e/videos'
           publishLocation: 'pipeline'
-      
+        condition: failed()
+
       - task: PublishTestResults@2
         displayName: Publish test results (Cypress)
         inputs:
           testResultsFormat: 'JUnit'
-          testResultsFiles: '$(System.DefaultWorkingDirectory)/yaktest/results/*.xml'
-          searchFolder: '$(System.DefaultWorkingDirectory)/yaktest'
+          testResultsFiles: '$(System.DefaultWorkingDirectory)/gx-yak-front-app/results/*.xml'
+          searchFolder: '$(System.DefaultWorkingDirectory)/gx-yak-front-app'
           failTaskOnFailedTests: true
           testRunTitle: 'E2E-Results'
+        condition: succeededOrFailed()
 
       - script: |
           npm run build $(BUILD_MODE)
@@ -145,11 +155,11 @@ jobs:
           VUE_APP_AUTH_URL_CLIENT_ID: $(VUE_APP_AUTH_URL_CLIENT_ID)
           VUE_APP_AUTH_URL_APP_SECRET: $(VUE_APP_AUTH_URL_APP_SECRET)
           VUE_APP_INTERCOM: $(VUE_APP_INTERCOM)
-        workingDirectory: $(System.DefaultWorkingDirectory)/yaktest/
+        workingDirectory: $(System.DefaultWorkingDirectory)/gx-yak-front-app/
 
       - task: ArchiveFiles@2
         inputs:
-          rootFolderOrFile: '$(System.DefaultWorkingDirectory)/yaktest/dist'
+          rootFolderOrFile: '$(System.DefaultWorkingDirectory)/gx-yak-front-app/dist'
           includeRootFolder: true
           archiveType: 'zip'
           archiveFile: '$(Build.ArtifactStagingDirectory)/$(STAGE)-$(buildVersion).zip'

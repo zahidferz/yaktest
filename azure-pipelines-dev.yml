@@ -1,4 +1,4 @@
-  
+
 # Node.js with Vue
 # Build a Node.js project that uses Vue.
 # Add steps that analyze code, save build artifacts, deploy, and more:
@@ -9,12 +9,13 @@ resources:
   - repository: yaktest # The name used to reference this repository in the checkout step
     type: github
     endpoint: za
-    name: zahidferz/yaktest
-  
+    name: zahid/yaktest
+    ref: $(Build.SourceBranchName)
+
   - repository: gx-yak-tests # The name used to reference this repository in the checkout step
     type: github
     endpoint: gx-github
-    name: gestionix/gx-yak-tests 
+    name: gestionix/gx-yak-tests
 
 name: $(SourceBranchName)
 pool:
@@ -31,6 +32,8 @@ jobs:
         name: App
 
   - job: Build
+    strategy:
+      parallel: 3
     displayName: Build
     dependsOn: GetVersion
     variables:
@@ -50,7 +53,6 @@ jobs:
         displayName: 'Install Node.js'
 
       - script: |
-          ls $(System.DefaultWorkingDirectory)
           sudo -- sh -c -e "echo '127.0.0.1 dev.local' >> /etc/hosts";
           cp -a $(System.DefaultWorkingDirectory)/gx-yak-tests/cypress/integration/.  $(System.DefaultWorkingDirectory)/yaktest/tests/e2e/specs
           cp -a $(System.DefaultWorkingDirectory)/gx-yak-tests/cypress/plugins/. $(System.DefaultWorkingDirectory)/yaktest/tests/e2e/plugins
@@ -89,13 +91,16 @@ jobs:
           VUE_APP_AUTH_URL_APP_SECRET: $(VUE_APP_AUTH_URL_APP_SECRET)
           VUE_APP_INTERCOM: $(VUE_APP_INTERCOM)
         workingDirectory: $(System.DefaultWorkingDirectory)/yaktest/
-        
+
+      - task: Bash@3
+        inputs:
+          filePath: '$(System.DefaultWorkingDirectory)/yaktest/ciserver.sh'
+          workingDirectory: '$(System.DefaultWorkingDirectory)/yaktest/'
+        displayName: 'Start CI Server'
 
       - script: |
-          npm run test:e2e -- --spec "tests/e2e/specs/Desktop/*" --reporter-options mochaFile=results/Desktop_Results.xml 
-          npm run test:e2e -- --spec "tests/e2e/specs/Mobile/*" --reporter-options mochaFile=results/Mobile_Results.xml
-        #  npm run test:e2e -- --spec "tests/e2e/specs/Desktop/*" --reporter-options mochaFile=results/Desktop_Results.xml --record --parallel --ci-build-id $(buildVersion) --group "Desktop" --tag $(STAGE)
-        #  npm run test:e2e -- --spec "tests/e2e/specs/Mobile/*" --reporter-options mochaFile=results/Mobile_Results.xml --record --parallel --ci-build-id $(buildVersion) --group "Mobile --tag $(STAGE)
+          npx cypress run --spec "tests/e2e/specs/Desktop/*" --reporter-options mochaFile=results/Desktop_Results.xml --record --parallel --ci-build-id $(buildVersion) --group "Desktop" --tag $(STAGE)
+          npx cypress run --spec "tests/e2e/specs/Mobile/*" --reporter-options mochaFile=results/Mobile_Results.xml --record --parallel --ci-build-id $(buildVersion) --group "Mobile" --tag $(STAGE)
         displayName: 'Run tests e2e'
         env:
           VUE_APP_ACC_PROV_URL_CLIENT_ID: $(VUE_APP_ACC_PROV_URL_CLIENT_ID)
@@ -105,6 +110,7 @@ jobs:
           VUE_APP_AUTH_URL_CLIENT_ID: $(VUE_APP_AUTH_URL_CLIENT_ID)
           VUE_APP_AUTH_URL_APP_SECRET: $(VUE_APP_AUTH_URL_APP_SECRET)
           VUE_APP_INTERCOM: $(VUE_APP_INTERCOM)
+          CYPRESS_HOST: $(CYPRESS_HOST)
         timeoutInMinutes: 15
         workingDirectory: $(System.DefaultWorkingDirectory)/yaktest/
         continueOnError: true
@@ -115,14 +121,16 @@ jobs:
           artifactName: 'screenshots'
           targetPath: '$(Build.SourcesDirectory)/yaktest/tests/e2e/screenshots'
           publishLocation: 'pipeline'
-      
+        condition: failed()
+
       - task: PublishPipelineArtifact@0
         displayName: 'Publish Videos (Cypress)'
         inputs:
           artifactName: 'videos'
           targetPath: '$(Build.SourcesDirectory)/yaktest/tests/e2e/videos'
           publishLocation: 'pipeline'
-      
+        condition: failed()
+
       - task: PublishTestResults@2
         displayName: Publish test results (Cypress)
         inputs:
@@ -130,6 +138,7 @@ jobs:
           testResultsFiles: '$(System.DefaultWorkingDirectory)/yaktest/results/*.xml'
           searchFolder: '$(System.DefaultWorkingDirectory)/yaktest'
           testRunTitle: 'E2E-Results'
+        condition: succeededOrFailed()
 
       - script: |
           npm run build $(BUILD_MODE)
