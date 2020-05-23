@@ -8,5 +8,10 @@ do
   tail nodeserver.log
   sleep .1
 done
+NumAg=$(echo $AGENTNAME | awk '{print NF}')
+echo $AGENTNAME
+echo $NumAg
+echo "##vso[task.setvariable variable=Number;isOutput=true]$NumAg"
+echo $Number
 echo -e "server has started\n"
 exit 0
