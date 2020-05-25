@@ -1,8 +1,8 @@
 $CIP=(Invoke-RestMethod https://checkip.amazonaws.com)
-$collectionurl = "https://dev.azure.com/gestionix-boa", 
-$project = "gx-sandbox-pipeline",  #Variable Group which needs to be updated
-$variableName = "CIPSERVER", #The specific variable which needs to be updated
-$user = "Gestionix",
+$collectionurl = "https://dev.azure.com/gestionix-boa"
+$project = "gx-sandbox-pipeline"  #Variable Group which needs to be updated
+$variableName = "CIPSERVER" #The specific variable which needs to be updated
+$user = "Gestionix"
 $token = "k4wcabkpjiyrkh6ag4vyrgacm66phucsbidvxsre3nhy4de2fq2a"
 
 #switch ($STAGE)
