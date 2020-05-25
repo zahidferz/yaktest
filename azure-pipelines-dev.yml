@@ -129,11 +129,11 @@ jobs:
       - task: Delay@1
         displayName: Setting Up
         inputs:
-          delayForMinutes: '1'
+          delayForMinutes: '3'
 
   - job: Test
     strategy:
-      parallel: 3
+      parallel: 2
     displayName: Test
     dependsOn: PreTest
 
