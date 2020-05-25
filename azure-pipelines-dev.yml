@@ -120,12 +120,16 @@ jobs:
           publishLocation: 'Container'
 
   - job: PreTest
+    pool: Server
+
     displayName: Setup Test
     dependsOn: GetVersion
-
+    steps:
+    
       - task: Delay@1
+        displayName: Setting Up
         inputs:
-        delayForMinutes: '1'
+          delayForMinutes: '1'
 
   - job: Test
     strategy:
