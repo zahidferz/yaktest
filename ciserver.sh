@@ -9,7 +9,6 @@ do
   sleep .1
 done
 export CIP=$(curl -s https://checkip.amazonaws.com)
-export STAGE=$STAGE
 echo -e "The server has started in the $CIP \n"
 pwsh ciserver.ps1
 sleep 120

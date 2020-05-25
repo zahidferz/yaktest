@@ -1,4 +1,4 @@
-$CIP=($env:CIP)
+$CIP=(Invoke-RestMethod https://checkip.amazonaws.com)
 $collectionurl = "https://dev.azure.com/gestionix-boa", 
 $project = "gx-sandbox-pipeline",  #Variable Group which needs to be updated
 $variableName = "CIPSERVER", #The specific variable which needs to be updated
@@ -26,6 +26,5 @@ $updatedvg = Invoke-RestMethod -Uri $baseUri -Method Put -Body $json -ContentTyp
 write-host "==========================================================" 
 Write-host "The value of Varialbe '$variableName' is updated to" $updatedvg.variables.$variableName.value
 write-host "=========================================================="
-$STAGE=($env:STAGE)
 Write-output "Set the CIPSERVER is set to $CIP from the $STAGE"
 exit
