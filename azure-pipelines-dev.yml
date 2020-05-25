@@ -119,11 +119,19 @@ jobs:
           ArtifactName: '$(STAGE)-$(buildVersion)'
           publishLocation: 'Container'
 
+  - job: PreTest
+    displayName: Setup Test
+    dependsOn: GetVersion
+
+      - task: Delay@1
+        inputs:
+        delayForMinutes: '1'
+
   - job: Test
     strategy:
       parallel: 2
     displayName: Test
-    dependsOn: GetVersion
+    dependsOn: PreTest
 
     steps:
 
