@@ -140,10 +140,10 @@ jobs:
           npm ci
         displayName: 'Install dependencies'
 
-      - bash: until curl -sf "$CIPSERVER"; do echo -n "."; sleep 1; done; sleep 10
+      - bash: until curl -sf $CIPSERVER; do echo -n "."; sleep 1; done; sleep 10
         displayName: 'Wait until CI Server is Up to Test on it'
         env: 
-          CIPSERVER: $CIPSERVER
+          CIPSERVER: $(CIPSERVER)
 
       - script: |
           npx cypress run --spec "/cypress/integration//Desktop/*" --reporter-options mochaFile=results/Desktop_Results.xml --record --parallel --ci-build-id $(buildVersion) --group "Desktop" --tag $(STAGE) \
