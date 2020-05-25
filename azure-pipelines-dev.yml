@@ -124,6 +124,8 @@ jobs:
     displayName: Test
     dependsOn: GetVersion
 
+    steps:
+
       - checkout: gx-yak-tests
 
       - script: | 
