@@ -154,7 +154,11 @@ jobs:
 
       - bash: |
           echo $(CIPSERVER)
-          until curl -sf $(CIPSERVER); do echo -n "."; sleep 1; done
+          until curl -sf $(CIPSERVER) 
+          do 
+          echo -n "."
+          sleep 1
+          done
         displayName: 'Wait until CI Server is Up to Test on it'
 
       - script: |
