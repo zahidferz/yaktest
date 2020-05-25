@@ -133,7 +133,7 @@ jobs:
 
   - job: Test
     strategy:
-      parallel: 2
+      parallel: 3
     displayName: Test
     dependsOn: PreTest
 
@@ -154,7 +154,7 @@ jobs:
 
       - bash: |
           echo $CIPSERVER
-          while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' $CIPSERVER)" != "200" ]];do echo -n '.';sleep 2; done
+          curl $CIPSERVER
         displayName: 'Wait until CI Server is Up to Test on it'
         env: 
           CIPSERVER: $(CIPSERVER)
