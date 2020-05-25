@@ -1,4 +1,5 @@
-$CIP=(Invoke-RestMethod https://checkip.amazonaws.com)
+$IP=(Invoke-RestMethod https://checkip.amazonaws.com).trim()
+$CIP =  $IP + ":8080"
 $STAGE=($env:STAGE)
 $collectionurl = "https://dev.azure.com/gestionix-boa"
 $project = "gx-sandbox-pipeline"  #Variable Group which needs to be updated
