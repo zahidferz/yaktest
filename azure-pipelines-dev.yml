@@ -129,7 +129,7 @@ jobs:
       - task: Delay@1
         displayName: Setting Up
         inputs:
-          delayForMinutes: '2'
+          delayForMinutes: '0.5'
 
   - job: Test
     strategy:
