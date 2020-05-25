@@ -49,6 +49,7 @@ jobs:
   - job: Test
     displayName: Test
     dependsOn: GetVersion
+    steps:
 
       - script: |
         sleep 10
