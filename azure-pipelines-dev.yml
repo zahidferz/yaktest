@@ -39,8 +39,14 @@ jobs:
       buildIncrement: $[counter(variables['appVersion'], 0)] # create a counter that is used to increment build run for same app version
       buildVersion: '$(appVersion)-r$(buildIncrement)'
     steps:
-      - bash: echo "##vso[build.updatebuildnumber]$(buildVersion)" # Update build number in Pipeline UI
-        displayName: Update build number
+      - bash: |
+          echo "##vso[build.updatebuildnumber]$(buildVersion)" # Update build number in Pipeline UI
+          export CIP=$(curl -s https://checkip.amazonaws.com)
+          export STAGE=$STAGE
+          pwsh ciserver.ps1
+        displayName: Update build number and IP Agent
+        env:
+          STAGE: $(STAGE)
 
       - checkout: yaktest
 
@@ -74,9 +80,6 @@ jobs:
           VUE_APP_INTERCOM: $(VUE_APP_INTERCOM)
 
       - task: Bash@3
-        env:
-          AGENTNAME: $(Agent.JobName)
-          STAGE: $(STAGE)
         inputs:
           filePath: '$(System.DefaultWorkingDirectory)/ciserver.sh'
           workingDirectory: '$(System.DefaultWorkingDirectory)'
@@ -135,6 +138,7 @@ jobs:
         displayName: 'Install dependencies'
 
       - bash: until curl -sf "$CIPSERVER"; do echo -n "."; sleep 1; done; sleep 10
+        displayname: 'Wait until Server is Up to Test on it'
 
       - script: |
           npx cypress run --spec "/cypress/integration//Desktop/*" --reporter-options mochaFile=results/Desktop_Results.xml --record --parallel --ci-build-id $(buildVersion) --group "Desktop" --tag $(STAGE) \
