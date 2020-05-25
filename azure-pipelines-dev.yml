@@ -154,7 +154,7 @@ jobs:
 
       - bash: |
           echo $CIPSERVER
-          until curl -sf $CIPSERVER; do curl $CIPSERVER; sleep 1; done; sleep 10
+          until curl -sf $CIPSERVER; do echo -n "."; sleep 1; done; sleep 10
         displayName: 'Wait until CI Server is Up to Test on it'
         env: 
           CIPSERVER: $(CIPSERVER)
