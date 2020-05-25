@@ -141,7 +141,7 @@ jobs:
           npm ci
         displayName: 'Install dependencies'
 
-      - bash: until curl -sf $(CIPSERVER); do echo -n "."; sleep 1; done; sleep 10
+      - bash: until curl -sf "$(CIPSERVER)"; do echo -n "."; sleep 1; done; sleep 10
         displayName: 'Wait until Server is Up to Test on it'
 
       - script: |
