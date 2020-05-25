@@ -9,6 +9,6 @@ do
   sleep .1
 done
 export CIP=$(curl -s https://checkip.amazonaws.com)
-echo -e "The server has started in the $CIP \n"
+echo -e "The server has started in the $CIP:8080 \n"
 sleep 120
 exit 0

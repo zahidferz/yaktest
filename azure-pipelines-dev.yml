@@ -153,7 +153,7 @@ jobs:
         displayName: 'Install dependencies'
 
       - bash: |
-          echo $(CIPSERVER)
+          echo $CIPSERVER:8080
           until curl -sf $CIPSERVER:8080; do curl $CIPSERVER:8080; sleep 1; done; sleep 10
         displayName: 'Wait until CI Server is Up to Test on it'
         env: 
