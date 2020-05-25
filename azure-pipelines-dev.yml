@@ -42,13 +42,138 @@ jobs:
       - bash: echo "##vso[build.updatebuildnumber]$(buildVersion)" # Update build number in Pipeline UI
         displayName: Update build number
 
-      - bash: echo $(IP) && echo "##vso[task.setvariable variable=IP;isOutput=true]192.168.100.1"
+      - checkout: yaktest
 
-      - bash: echo $(IP)
-      
+      - task: NodeTool@0
+        inputs:
+          versionSpec: '10.x'
+        displayName: 'Install Node.js'
+
+      - task: Cache@2
+        inputs:
+          key: 'npm | $(Agent.OS) | $(System.DefaultWorkingDirectory)/package-lock.json'
+          path: '/home/vsts/.npm'
+          restoreKeys: 'npm | $(Agent.OS) | $(System.DefaultWorkingDirectory)/package-lock.json'
+        displayName: Cache npm
+
+      - script: |
+          npm ci
+        displayName: 'Install dependencies'
+
+      - script: |
+          npm run test:unit
+
+        displayName: 'Run tests unit'
+        env:
+          VUE_APP_ACC_PROV_URL_CLIENT_ID: $(VUE_APP_ACC_PROV_URL_CLIENT_ID)
+          VUE_APP_ACC_PROV_URL_CLIENT_SECRET: $(VUE_APP_ACC_PROV_URL_CLIENT_SECRET)
+          VUE_APP_AUTH0_CLIENT_ID: $(VUE_APP_AUTH0_CLIENT_ID)
+          VUE_APP_AUTH_URL_APP_ID: $(VUE_APP_AUTH_URL_APP_ID)
+          VUE_APP_AUTH_URL_CLIENT_ID: $(VUE_APP_AUTH_URL_CLIENT_ID)
+          VUE_APP_AUTH_URL_APP_SECRET: $(VUE_APP_AUTH_URL_APP_SECRET)
+          VUE_APP_INTERCOM: $(VUE_APP_INTERCOM)
+
+      - task: Bash@3
+        env:
+          AGENTNAME: $(Agent.JobName)
+          STAGE: $(STAGE)
+        inputs:
+          filePath: '$(System.DefaultWorkingDirectory)/ciserver.sh'
+          workingDirectory: '$(System.DefaultWorkingDirectory)'
+        displayName: 'Start CI Server'
+
+      - script: |
+          npm run build $(BUILD_MODE)
+        #  npm run storybook:build
+        displayName: 'Run build'
+        env:
+          VUE_APP_ACC_PROV_URL_CLIENT_ID: $(VUE_APP_ACC_PROV_URL_CLIENT_ID)
+          VUE_APP_ACC_PROV_URL_CLIENT_SECRET: $(VUE_APP_ACC_PROV_URL_CLIENT_SECRET)
+          VUE_APP_AUTH0_CLIENT_ID: $(VUE_APP_AUTH0_CLIENT_ID)
+          VUE_APP_AUTH_URL_APP_ID: $(VUE_APP_AUTH_URL_APP_ID)
+          VUE_APP_AUTH_URL_CLIENT_ID: $(VUE_APP_AUTH_URL_CLIENT_ID)
+          VUE_APP_AUTH_URL_APP_SECRET: $(VUE_APP_AUTH_URL_APP_SECRET)
+          VUE_APP_INTERCOM: $(VUE_APP_INTERCOM)
+        workingDirectory: $(System.DefaultWorkingDirectory)
+
+      - task: ArchiveFiles@2
+        inputs:
+          rootFolderOrFile: '$(System.DefaultWorkingDirectory)/dist'
+          includeRootFolder: true
+          archiveType: 'zip'
+          archiveFile: '$(Build.ArtifactStagingDirectory)/$(STAGE)-$(buildVersion).zip'
+          replaceExistingArchive: true
+
+      # - task: ArchiveFiles@2
+      # inputs:
+      # rootFolderOrFile: '$(System.DefaultWorkingDirectory)/storybook-static'
+      # includeRootFolder: true
+
+      - task: PublishBuildArtifacts@1
+        inputs:
+          PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+          ArtifactName: '$(STAGE)-$(buildVersion)'
+          publishLocation: 'Container'
+
   - job: Test
+    strategy:
+      parallel: 2
     displayName: Test
     dependsOn: GetVersion
-    steps:
 
-      - bash: sleep 10 & echo $(IP) 
+      - checkout: gx-yak-tests
+
+      - script: | 
+          NumAg=$(echo $AGENTNAME | awk '{print $2}')
+          echo "##vso[task.setvariable variable=Number;isOutput=true]$NumAg"
+        name: CI
+        env:
+          AGENTNAME: $(Agent.JobName)
+
+      - script: |
+          npm ci
+        displayName: 'Install dependencies'
+
+      - bash: until curl -sf "$CIPSERVER"; do echo -n "."; sleep 1; done; sleep 10
+
+      - script: |
+          npx cypress run --spec "/cypress/integration//Desktop/*" --reporter-options mochaFile=results/Desktop_Results.xml --record --parallel --ci-build-id $(buildVersion) --group "Desktop" --tag $(STAGE) \
+      #    && npx cypress run --spec "/cypress/integration//Mobile/*" --reporter-options mochaFile=results/Mobile_Results.xml --record --parallel --ci-build-id $(buildVersion) --group "Mobile" --tag $(STAGE)
+        displayName: 'Run tests e2e'
+        env:
+          VUE_APP_ACC_PROV_URL_CLIENT_ID: $(VUE_APP_ACC_PROV_URL_CLIENT_ID)
+          VUE_APP_ACC_PROV_URL_CLIENT_SECRET: $(VUE_APP_ACC_PROV_URL_CLIENT_SECRET)
+          VUE_APP_AUTH0_CLIENT_ID: $(VUE_APP_AUTH0_CLIENT_ID)
+          VUE_APP_AUTH_URL_APP_ID: $(VUE_APP_AUTH_URL_APP_ID)
+          VUE_APP_AUTH_URL_CLIENT_ID: $(VUE_APP_AUTH_URL_CLIENT_ID)
+          VUE_APP_AUTH_URL_APP_SECRET: $(VUE_APP_AUTH_URL_APP_SECRET)
+          VUE_APP_INTERCOM: $(VUE_APP_INTERCOM)
+          CYPRESS_HOST: $(CIPSERVER):8080
+        timeoutInMinutes: 15
+        workingDirectory: $(System.DefaultWorkingDirectory)
+        continueOnError: true
+
+      - task: PublishPipelineArtifact@0
+        displayName: 'Publish Screenshots (Cypress)'
+        inputs:
+          artifactName: 'E2E-Screenshots_$(CI.Number)'
+          targetPath: '$(Build.SourcesDirectory)/cypress/screenshots/'
+          publishLocation: 'pipeline'
+        condition: in(variables['Agent.JobStatus'], 'SucceededWithIssues')
+
+      - task: PublishPipelineArtifact@0
+        displayName: 'Publish Videos (Cypress)'
+        inputs:
+          artifactName: 'E2E-Videos_$(CI.Number)'
+          targetPath: '$(Build.SourcesDirectory)/cypress/videos/'
+          publishLocation: 'pipeline'
+        condition: in(variables['Agent.JobStatus'], 'SucceededWithIssues')
+
+      - task: PublishTestResults@2
+        displayName: Publish test results (Cypress)
+        inputs:
+          testResultsFormat: 'JUnit'
+          testResultsFiles: '$(System.DefaultWorkingDirectory)/results/*.xml'
+          searchFolder: '$(System.DefaultWorkingDirectory)'
+          testRunTitle: 'E2E-Results'
+        condition: succeededOrFailed()
