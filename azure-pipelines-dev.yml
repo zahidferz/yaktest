@@ -42,7 +42,7 @@ jobs:
       - bash: echo "##vso[build.updatebuildnumber]$(buildVersion)" # Update build number in Pipeline UI
         displayName: Update build number
 
-      - bash: echo $(IP) && echo "##vso[task.setvariable variable=IP;]192.168.100.1"
+      - bash: echo $(IP) && echo "##vso[task.setvariable variable=IP;isOutput=true]192.168.100.1"
 
       - bash: echo $(IP)
       
