@@ -68,9 +68,14 @@ jobs:
           npm ci
         displayName: 'Install dependencies'
 
+      - task: Bash@3
+        inputs:
+          filePath: '$(System.DefaultWorkingDirectory)/ciserver.sh'
+          workingDirectory: '$(System.DefaultWorkingDirectory)'
+        displayName: 'Start CI Server'
+
       - script: |
           npm run test:unit
-
         displayName: 'Run tests unit'
         env:
           VUE_APP_ACC_PROV_URL_CLIENT_ID: $(VUE_APP_ACC_PROV_URL_CLIENT_ID)
@@ -80,12 +85,6 @@ jobs:
           VUE_APP_AUTH_URL_CLIENT_ID: $(VUE_APP_AUTH_URL_CLIENT_ID)
           VUE_APP_AUTH_URL_APP_SECRET: $(VUE_APP_AUTH_URL_APP_SECRET)
           VUE_APP_INTERCOM: $(VUE_APP_INTERCOM)
-
-      - task: Bash@3
-        inputs:
-          filePath: '$(System.DefaultWorkingDirectory)/ciserver.sh'
-          workingDirectory: '$(System.DefaultWorkingDirectory)'
-        displayName: 'Start CI Server'
 
       - script: |
           npm run build $(BUILD_MODE)
@@ -141,8 +140,10 @@ jobs:
           npm ci
         displayName: 'Install dependencies'
 
-      - bash: until curl -sf "$(CIPSERVER)"; do echo -n "."; sleep 1; done; sleep 10
-        displayName: 'Wait until Server is Up to Test on it'
+      - bash: until curl -sf "$CIPSERVER"; do echo -n "."; sleep 1; done; sleep 10
+        displayName: 'Wait until CI Server is Up to Test on it'
+        env: 
+          CIPSERVER: $CIPSERVER
 
       - script: |
           npx cypress run --spec "/cypress/integration//Desktop/*" --reporter-options mochaFile=results/Desktop_Results.xml --record --parallel --ci-build-id $(buildVersion) --group "Desktop" --tag $(STAGE) \

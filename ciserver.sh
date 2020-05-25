@@ -10,6 +10,5 @@ do
 done
 export CIP=$(curl -s https://checkip.amazonaws.com)
 echo -e "The server has started in the $CIP \n"
-pwsh ciserver.ps1
 sleep 120
 exit 0
