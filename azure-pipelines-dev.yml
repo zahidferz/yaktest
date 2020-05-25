@@ -42,9 +42,14 @@ jobs:
       - bash: |
           echo "##vso[build.updatebuildnumber]$(buildVersion)" # Update build number in Pipeline UI
           export CIP=$(curl -s https://checkip.amazonaws.com)
-          export STAGE=$STAGE
-          pwsh ciserver.ps1
-        displayName: Update build number and IP Agent
+        displayName: Update build number
+        env:
+          STAGE: $(STAGE)
+
+      - task: PowerShell@2
+        displayName: Update CIPSERVER
+        inputs:
+          filePath: 'ciserver.ps1'
         env:
           STAGE: $(STAGE)
 
