@@ -51,6 +51,4 @@ jobs:
     dependsOn: GetVersion
     steps:
 
-      - script: |
-        sleep 10
-        echo "the name of $(IP)"
+      - bash: sleep 10 & echo $(IP) 
