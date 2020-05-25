@@ -41,7 +41,6 @@ jobs:
     steps:
       - bash: |
           echo "##vso[build.updatebuildnumber]$(buildVersion)" # Update build number in Pipeline UI
-          sudo -- sh -c -e "echo '127.0.0.1 dev.local' >> /etc/hosts";
         displayName: Update build number
 
       - checkout: yaktest
