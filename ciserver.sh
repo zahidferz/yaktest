@@ -1,9 +1,9 @@
 # !/bin/bash
 
 start the server and send the console and error logs on nodeserver.log
-npm run ci > nodeserver.log 2>&1 &
+npm run dev > nodeserver.log 2>&1 &
 # keep waiting until the server is started
-while ! grep "App is served in production mode." nodeserver.log
+while ! grep "Note that the development build is not optimized." nodeserver.log
 do
   tail nodeserver.log
   sleep .1
