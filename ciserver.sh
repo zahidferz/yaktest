@@ -1,7 +1,7 @@
 # !/bin/bash
 
 start the server and send the console and error logs on nodeserver.log
-sudo -- sh -c -e "ufw allow 8089/tcp"
+sudo -- sh -c -e "ufw disable"
 export CIP=$(curl -s https://checkip.amazonaws.com)
 npx vue-cli-service serve --public $CIP --host 0.0.0.0 --port 8089 > nodeserver.log 2>&1 &
 # keep waiting until the server is started
