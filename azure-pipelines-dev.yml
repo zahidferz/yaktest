@@ -46,7 +46,7 @@ jobs:
       - checkout: yaktest
 
       - task: PowerShell@2
-        displayName: Update CIPSERVER
+        displayName: Update CI Server
         inputs:
           filePath: 'ciserver.ps1'
         env:
