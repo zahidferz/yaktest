@@ -77,10 +77,10 @@ jobs:
           CI: $(CI)
         
       - bash: |
-          echo localhost:8080
+          echo localhost:8089
           while [ 1 = 1 ]
           do
-          curl localhost:8080
+          curl localhost:8089
           done
         name: Curl
 
@@ -163,10 +163,10 @@ jobs:
         displayName: 'Install dependencies'
 
       - bash: |
-          echo $(CIPSERVER)
+          echo localhost:8089
           while [ 1 = 1 ]
           do
-          curl $(CIPSERVER):8089
+          curl localhost:8089
           done
         name: Curl
 
