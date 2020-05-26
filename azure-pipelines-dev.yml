@@ -154,7 +154,7 @@ jobs:
 
       - bash: |
           echo $CIPSERVER
-          curl $CIPSERVER
+          curl --write-out %{http_code} --silent --output /dev/null $CIPSERVER
         displayName: 'Wait until CI Server is Up to Test on it'
         env: 
           CIPSERVER: $(CIPSERVER)
