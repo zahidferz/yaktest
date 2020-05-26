@@ -35,7 +35,6 @@
     "@bugsnag/js": "^6.3.2",
     "@bugsnag/plugin-vue": "^6.3.0",
     "@gestionix/uikit": "^0.6.2",
-    "@testing-library/cypress": "^6.0.0",
     "@testing-library/dom": "^6.1.0",
     "@testing-library/vue": "^4.1.0",
     "animejs": "^3.1.0",
