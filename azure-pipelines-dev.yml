@@ -154,7 +154,7 @@ jobs:
 
       - bash: |
           echo $CIPSERVER
-          while [[ "$(curl --write-out %{http_code} --silent --output /dev/null $CIPSERVER != "200" ]];do echo -n '.';sleep 2; done
+          while [[ $(curl --write-out %{http_code} --silent --output /dev/null $CIPSERVER) != "200" ]];do echo -n '.';sleep 2; done
         displayName: 'Wait until CI Server is Up to Test on it'
         env: 
           CIPSERVER: $(CIPSERVER)
