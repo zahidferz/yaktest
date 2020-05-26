@@ -40,7 +40,6 @@ jobs:
       buildVersion: '$(appVersion)-r$(buildIncrement)'
     steps:
       - bash: |
-          sudo -- sh -c -e "echo '127.0.0.1 dev.local' >> /etc/hosts";
           echo "##vso[build.updatebuildnumber]$(buildVersion)" # Update build number in Pipeline UI
         displayName: Update build number
 
