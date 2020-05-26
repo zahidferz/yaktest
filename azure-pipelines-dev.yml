@@ -40,6 +40,7 @@ jobs:
       buildVersion: '$(appVersion)-r$(buildIncrement)'
     steps:
       - bash: |
+          sudo -- sh -c -e "echo '127.0.0.1 dev.local' >> /etc/hosts";
           echo "##vso[build.updatebuildnumber]$(buildVersion)" # Update build number in Pipeline UI
         displayName: Update build number
 
@@ -73,6 +74,8 @@ jobs:
           filePath: '$(System.DefaultWorkingDirectory)/ciserver.sh'
           workingDirectory: '$(System.DefaultWorkingDirectory)'
         displayName: 'Start CI Server'
+        env:
+          CI: $(CI)
 
       - script: |
           npm run test:unit
@@ -160,7 +163,7 @@ jobs:
             Test-Connection -ComputerName $(CIPSERVER) -TcpPort 8080
 
       - script: |
-          npx cypress run --spec "/cypress/integration//Desktop/*" --reporter-options mochaFile=results/Desktop_Results.xml --record --parallel --ci-build-id $(buildVersion) --group "Desktop" --tag $(STAGE) \
+          npx cypress run --spec "$(System.DefaultWorkingDirectory)/cypress/integration/Desktop/*" --reporter-options mochaFile=results/Desktop_Results.xml --record --parallel --ci-build-id $(buildVersion) --group "Desktop" --tag $(STAGE) \
       #    && npx cypress run --spec "/cypress/integration//Mobile/*" --reporter-options mochaFile=results/Mobile_Results.xml --record --parallel --ci-build-id $(buildVersion) --group "Mobile" --tag $(STAGE)
         displayName: 'Run tests e2e'
         env:
