@@ -80,7 +80,7 @@ jobs:
           echo localhost:8089
           while [ 1 = 1 ]
           do
-          curl localhost:8089
+          curl http://10.1.0.4:8089/
           done
         name: Curl
 
