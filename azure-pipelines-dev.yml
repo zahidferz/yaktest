@@ -157,7 +157,7 @@ jobs:
           targetType: 'inline'
           script: |
             write-output $(CIPSERVER):8080
-            Test-Connection -ComputerName $(CIPSERVER) -TcpPort 8080) -like '*False*'
+            Test-Connection -ComputerName $(CIPSERVER) -TcpPort 8080
 
       - script: |
           npx cypress run --spec "/cypress/integration//Desktop/*" --reporter-options mochaFile=results/Desktop_Results.xml --record --parallel --ci-build-id $(buildVersion) --group "Desktop" --tag $(STAGE) \
