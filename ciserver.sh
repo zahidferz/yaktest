@@ -1,10 +1,10 @@
 # !/bin/bash
 
 start the server and send the console and error logs on nodeserver.log
-ufw allow 8080/tcp
+sudo -- sh -c -e "ufw allow 8080/tcp"
 npm run dev > nodeserver.log 2>&1 &
 # keep waiting until the server is started
-while ! grep "Note that the development build is not optimized." nodeserver.log
+while ! grep "To create a production build, run npm run build." nodeserver.log
 do
   tail nodeserver.log
   sleep .1
