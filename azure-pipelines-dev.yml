@@ -156,8 +156,9 @@ jobs:
         inputs:
           targetType: 'inline'
           script: |
-            write-output $(CIPSERVER):8080
-            while((Test-Connection -ComputerName $(CIPSERVER) -TcpPort 8080) -like '*False*'){
+            CIPSERVER= ($env:CIPSERVER)
+            write-output $CIPSERVER:8080
+            while((Test-Connection -ComputerName $CIPSERVER -TcpPort 8080) -like '*False*'){
               Start-Sleep -s 2
               Write-Host -NoNewline '.'
             }
