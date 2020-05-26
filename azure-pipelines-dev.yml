@@ -152,10 +152,16 @@ jobs:
           npm ci
         displayName: 'Install dependencies'
 
-      - bash: |
-          echo $CIPSERVER
-          while [[ $(curl --write-out %{http_code} --silent --output /dev/null $CIPSERVER) != "200" ]];do echo -n '.';sleep 2; done
-        displayName: 'Wait until CI Server is Up to Test on it'
+      - task: PowerShell@2
+        inputs:
+          targetType: 'inline'
+          script: |
+            write-output $CIPSERVER
+            while((Test-Connection -ComputerName $CIPSERVER -TcpPort 8080) -like '*False*'){
+              Start-Sleep -s 2
+              Write-Host -NoNewline '.'
+            }
+            Start-Sleep -s 5
         env: 
           CIPSERVER: $(CIPSERVER)
 
