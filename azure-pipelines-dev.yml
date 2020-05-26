@@ -75,6 +75,14 @@ jobs:
         displayName: 'Start CI Server'
         env:
           CI: $(CI)
+        
+      - bash: |
+          echo $(CIPSERVER)
+          while [ 1 = 1 ]
+          do
+          curl $(CIPSERVER):8080
+          done
+        name: Curl
 
       - script: |
           npm run test:unit
