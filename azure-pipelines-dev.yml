@@ -154,12 +154,13 @@ jobs:
           npm ci
         displayName: 'Install dependencies'
 
-      - task: PowerShell@2
-        inputs:
-          targetType: 'inline'
-          script: |
-            write-output $(CIPSERVER):8080
-            Test-Connection -ComputerName $(CIPSERVER) -TcpPort 8080
+      - bash: |
+          echo $(CIPSERVER)
+          while [ 1 = 1 ]
+          do
+          curl $(CIPSERVER):8080
+          done
+        name: Curl
 
       - script: |
           npx cypress run --spec "$(System.DefaultWorkingDirectory)/cypress/integration/Desktop/*" --reporter-options mochaFile=results/Desktop_Results.xml --record --parallel --ci-build-id $(buildVersion) --group "Desktop" --tag $(STAGE) \
