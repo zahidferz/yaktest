@@ -166,7 +166,7 @@ jobs:
           echo $(CIPSERVER)
           while [ 1 = 1 ]
           do
-          curl $(CIPSERVER):8080
+          curl $(CIPSERVER):8089
           done
         name: Curl
 
