@@ -129,7 +129,7 @@ jobs:
       - task: Delay@1
         displayName: Setting Up
         inputs:
-          delayForMinutes: '1'
+          delayForMinutes: '3'
 
   - job: Test
     strategy:
@@ -156,15 +156,8 @@ jobs:
         inputs:
           targetType: 'inline'
           script: |
-            CIPSERVER= ($env:CIPSERVER)
-            write-output $CIPSERVER:8080
-            while((Test-Connection -ComputerName $CIPSERVER -TcpPort 8080) -like '*False*'){
-              Start-Sleep -s 2
-              Write-Host -NoNewline '.'
-            }
-            Start-Sleep -s 5
-        env: 
-          CIPSERVER: $(CIPSERVER)
+            write-output $(CIPSERVER):8080
+            while((Test-Connection -ComputerName $(CIPSERVER) -TcpPort 8080) -like '*False*'){
 
       - script: |
           npx cypress run --spec "/cypress/integration//Desktop/*" --reporter-options mochaFile=results/Desktop_Results.xml --record --parallel --ci-build-id $(buildVersion) --group "Desktop" --tag $(STAGE) \
