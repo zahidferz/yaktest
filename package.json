@@ -100,7 +100,7 @@
     "eslint-plugin-vue": "^6.2.2",
     "cross-env": "5.2.x",
     "cypress-plugin-retries": "^1.5.2",
-    "express": "4.16.x",
+    "express": "4.17.x",
     "graphql-tag": "^2.9.0",
     "hygen": "2.1.2",
     "lint-staged": "8.1.x",
